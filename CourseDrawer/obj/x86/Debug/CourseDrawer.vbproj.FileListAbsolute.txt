@@ -1,11 +1,8 @@
 C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\bin\Debug\CourseDrawer.exe
 C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\bin\Debug\CourseDrawer.pdb
 C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\bin\Debug\CourseDrawer.xml
-C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.Form1.resources
 C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.Resources.resources
-C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.exe
 C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.xml
 C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.pdb
@@ -14,5 +11,4 @@ C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\bin\Debug\CourseDraw
 C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\bin\Debug\CourseDrawer.application
 C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.exe.manifest
 C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.application
-C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\bin\Debug\CourseDrawer.exe.config
-C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.xml
+C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.vbproj.GenerateResource.Cache

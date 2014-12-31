@@ -6,7 +6,76 @@ CourseDrawer
 </name>
 </assembly>
 <members>
-<member name="M:CourseDrawer.clsCourses.#ctor">
+<member name="M:CourseDrawer.Form1.butLoad_Click(System.Object,System.EventArgs)">
+	<summary>
+ Loads bitmap as background
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.Form1.PictureBox1_Click(System.Object,System.EventArgs)">
+	<summary>
+ Do things                                                                             
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsWaypoint.#ctor">
+	<summary>
+ Constructor
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsWaypoint.selectWP(System.Drawing.PointF,System.Double)">
+	<summary>
+ Find if this waypoint is selected (in range of point)
+ </summary>
+	<param name="point"></param>
+	<param name="range"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsWaypoint.setNewPos(System.Drawing.PointF)">
+	<summary>
+ Set new position
+ </summary>
+	<param name="point"></param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsWaypoint.SelectionChangedHandler(CourseDrawer.clsWaypoint@)">
+	<summary>
+ Set selected attribute
+ </summary>
+	<param name="wp"></param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsWaypoint.getXML(System.Int32)">
+	<summary>
+ Create XML from waypoint
+ </summary>
+	<param name="id"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsWaypoint.Finalize">
+	<summary>
+ Destructor
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsWaypoint.Clone(System.Single,System.Single)">
+	<summary>
+ Clone waypoint (create copy)
+ </summary>
+	<param name="dX">offset X</param>
+	<param name="dY">offset Y</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsWaypoint.forceSelect">
+	<summary>
+ Force select this waypoint
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsWaypoint.forceUnselect">
+	<summary>
+ Force unselect
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourses.#ctor">
 	<summary>
  Constructor
  </summary>
@@ -148,20 +217,6 @@ CourseDrawer
  Class for collection of courses
  </summary>
 	<remarks>Singleton class for wrapping courses</remarks>
-</member><member name="M:CourseDrawer.Form1.butLoad_Click(System.Object,System.EventArgs)">
-	<summary>
- Loads bitmap as background
- </summary>
-	<param name="sender"></param>
-	<param name="e"></param>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.Form1.PictureBox1_Click(System.Object,System.EventArgs)">
-	<summary>
- Do things                                                                             
- </summary>
-	<param name="sender"></param>
-	<param name="e"></param>
-	<remarks></remarks>
 </member><member name="M:CourseDrawer.clsCourse.#ctor">
 	<summary>
  Constructor
@@ -289,61 +344,19 @@ CourseDrawer
 	<param name="pt2"></param>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsWaypoint.#ctor">
+</member><member name="P:CourseDrawer.My.Resources.Resources.ResourceManager">
 	<summary>
- Constructor
- </summary>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsWaypoint.selectWP(System.Drawing.PointF,System.Double)">
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.Culture">
 	<summary>
- Find if this waypoint is selected (in range of point)
- </summary>
-	<param name="point"></param>
-	<param name="range"></param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsWaypoint.setNewPos(System.Drawing.PointF)">
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:CourseDrawer.My.Resources.Resources">
 	<summary>
- Set new position
- </summary>
-	<param name="point"></param>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsWaypoint.SelectionChangedHandler(CourseDrawer.clsWaypoint@)">
-	<summary>
- Set selected attribute
- </summary>
-	<param name="wp"></param>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsWaypoint.getXML(System.Int32)">
-	<summary>
- Create XML from waypoint
- </summary>
-	<param name="id"></param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsWaypoint.Finalize">
-	<summary>
- Destructor
- </summary>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsWaypoint.Clone(System.Single,System.Single)">
-	<summary>
- Clone waypoint (create copy)
- </summary>
-	<param name="dX">offset X</param>
-	<param name="dY">offset Y</param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsWaypoint.forceSelect">
-	<summary>
- Force select this waypoint
- </summary>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsWaypoint.forceUnselect">
-	<summary>
- Force unselect
- </summary>
-	<remarks></remarks>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
 </member><member name="M:CourseDrawer.main.getWorlCoordinates(System.Int64,System.Int64,System.Int32)">
 	<summary>
  Get true world coordinates (abstracting from zoom)
@@ -394,19 +407,6 @@ CourseDrawer
 	<param name="zoomLevel"></param>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="P:CourseDrawer.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:CourseDrawer.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:CourseDrawer.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
 </member>
 </members>
 </doc>
