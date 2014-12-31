@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("CourseDrawer")> 
-<Assembly: AssemblyDescription("FS 2011 courseplay editor")> 
+<Assembly: AssemblyDescription("FS 2015 courseplay editor")> 
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("CourseDrawer")> 
 <Assembly: AssemblyCopyright("Copyright ©  2012")> 
