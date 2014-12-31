@@ -50,17 +50,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>CxiKq4oJcJpPatZyNiTL+tNUr3g=</dsig:DigestValue>
+        <dsig:DigestValue>Mfy0ZqVlsIu4AlGhk6mZvAIvNeE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="CourseDrawer.exe.config" size="2186">
+  <file name="CourseDrawer.exe.config" size="2262">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>kEaOsN8nmwov6oNUnn5McKXElVc=</dsig:DigestValue>
+      <dsig:DigestValue>Ofg8n9qQBF/SXDsU5x78taV9gdo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\04_maps.ico" size="67646">
