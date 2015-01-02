@@ -416,4 +416,9 @@
             End If
         End If
     End Function
+
+    Function parent() As Object
+        Throw New NotImplementedException
+    End Function
+
 End Class

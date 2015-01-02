@@ -4,6 +4,7 @@
 ''' <remarks>Singleton class for wrapping courses</remarks>
 Public Class clsCourses
     Private _courses As List(Of clsCourse)
+    Private _folders As List(Of clsFolder)
     Private _selectedWP As clsWaypoint
     Private _seledtedCrs As Integer
     Public ReadOnly Property Count As Integer
@@ -12,6 +13,7 @@ Public Class clsCourses
         End Get
     End Property
     Private Shared _instance As clsCourses
+    Private Shared _instance1 As clsFolders
     ''' <summary>
     ''' Constructor
     ''' </summary>
@@ -66,19 +68,51 @@ Public Class clsCourses
     ''' <remarks></remarks>
     Public Sub ReadXML(ByVal file As String)
         Dim xmlDoc As New Xml.XmlDocument()
-        Dim xmlNode As Xml.XmlNode
-        Dim xmlNodeReader As Xml.XmlNodeReader
         Dim course As New clsCourse
         Dim waypoint As New clsWaypoint
+        Dim folder As New clsFolder
         Dim stringA() As String
 
         If file = String.Empty Then Exit Sub
 
         xmlDoc.Load(file)
         If xmlDoc Is Nothing Then Exit Sub
-        xmlNode = xmlDoc.DocumentElement.SelectSingleNode("courses")
-        xmlNodeReader = New Xml.XmlNodeReader(xmlNode)
-        Do While (xmlNodeReader.Read())
+        Using reader As XmlReader = XmlReader.Create(file)
+            Do
+                reader.ReadToDescendant("courseplayHud")
+                reader.ReadToFollowing("posX")
+                Console.WriteLine(reader.ReadElementContentAsInt())
+                reader.ReadToFollowing("posY")
+                Console.WriteLine(reader.ReadElementContentAsInt())
+                reader.ReadToDescendant("courseplayFields")
+                reader.MoveToAttribute("automaticScan")
+                Dim automaticScan As Boolean = reader.ReadContentAsBoolean()
+                reader.MoveToAttribute("onlyScanOwnedFields")
+                Dim onlyScanOwnedFields As Boolean = reader.ReadContentAsBoolean()
+                reader.MoveToAttribute("debugScanedFields")
+                Dim debugScanedFields As Boolean = reader.ReadContentAsBoolean()
+                reader.ReadToFollowing("scanStep")
+                Console.WriteLine(reader.ReadElementContentAsString())
+                reader.ReadToDescendant("courseplayWages")
+                reader.MoveToAttribute("active")
+                Dim active = reader.ReadContentAsBoolean()
+                reader.ReadToFollowing("wagePerHour")
+                Console.WriteLine(reader.ReadElementContentAsString())
+                reader.ReadToDescendant("courseplayIngameMap")
+                reader.MoveToAttribute("active")
+                Dim showName = reader.ReadContentAsBoolean()
+                Dim showCourse = reader.ReadContentAsBoolean()
+                reader.ReadToDescendant("courseManagement")
+                reader.ReadToFollowing("batchWriteSize")
+                Console.WriteLine(reader.ReadElementContentAsString())
+            Loop
+        End Using
+        Do While 
+            Dim xmlNode As Xml.XmlNode
+            Dim xmlNodeReader As Xml.XmlNodeReader
+            xmlNode = xmlDoc.DocumentElement.SelectSingleNode("courses")
+            xmlNodeReader = New Xml.XmlNodeReader(xmlNode)
+            (xmlNodeReader.Read())
             Select Case xmlNodeReader.NodeType
                 Case Xml.XmlNodeType.Element
                     If xmlNodeReader.LocalName = "course" Then
@@ -90,6 +124,8 @@ Public Class clsCourses
                                     course.Name = xmlNodeReader.Value
                                 Case "id"
                                     Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, course.id)
+                                Case "parent"
+                                    Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, course.parent)
                             End Select
                         End While
                     ElseIf xmlNodeReader.LocalName.StartsWith("waypoint") Then

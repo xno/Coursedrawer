@@ -130,7 +130,11 @@
   <ItemGroup>
     <Compile Include="clsCourses.vb" />
     <Compile Include="clsCourse.vb" />
+    <Compile Include="clsFolder.vb" />
+    <Compile Include="clsFolders.vb" />
     <Compile Include="clsWaypoint.vb" />
+    <Compile Include="courseplayHud.vb" />
+    <Compile Include="folder.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +143,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="main.vb" />
+    <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

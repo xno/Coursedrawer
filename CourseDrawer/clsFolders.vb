@@ -1,0 +1,4 @@
+﻿
+Class clsFolders
+
+End Class
