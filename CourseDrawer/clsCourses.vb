@@ -68,6 +68,8 @@ Public Class clsCourses
     ''' <remarks></remarks>
     Public Sub ReadXML(ByVal file As String)
         Dim xmlDoc As New Xml.XmlDocument()
+        Dim xmlNode As Xml.XmlNode
+        Dim xmlNodeReader As Xml.XmlNodeReader
         Dim course As New clsCourse
         Dim waypoint As New clsWaypoint
         Dim folder As New clsFolder
@@ -77,42 +79,9 @@ Public Class clsCourses
 
         xmlDoc.Load(file)
         If xmlDoc Is Nothing Then Exit Sub
-        Using reader As XmlReader = XmlReader.Create(file)
-            Do
-                reader.ReadToDescendant("courseplayHud")
-                reader.ReadToFollowing("posX")
-                Console.WriteLine(reader.ReadElementContentAsInt())
-                reader.ReadToFollowing("posY")
-                Console.WriteLine(reader.ReadElementContentAsInt())
-                reader.ReadToDescendant("courseplayFields")
-                reader.MoveToAttribute("automaticScan")
-                Dim automaticScan As Boolean = reader.ReadContentAsBoolean()
-                reader.MoveToAttribute("onlyScanOwnedFields")
-                Dim onlyScanOwnedFields As Boolean = reader.ReadContentAsBoolean()
-                reader.MoveToAttribute("debugScanedFields")
-                Dim debugScanedFields As Boolean = reader.ReadContentAsBoolean()
-                reader.ReadToFollowing("scanStep")
-                Console.WriteLine(reader.ReadElementContentAsString())
-                reader.ReadToDescendant("courseplayWages")
-                reader.MoveToAttribute("active")
-                Dim active = reader.ReadContentAsBoolean()
-                reader.ReadToFollowing("wagePerHour")
-                Console.WriteLine(reader.ReadElementContentAsString())
-                reader.ReadToDescendant("courseplayIngameMap")
-                reader.MoveToAttribute("active")
-                Dim showName = reader.ReadContentAsBoolean()
-                Dim showCourse = reader.ReadContentAsBoolean()
-                reader.ReadToDescendant("courseManagement")
-                reader.ReadToFollowing("batchWriteSize")
-                Console.WriteLine(reader.ReadElementContentAsString())
-            Loop
-        End Using
-        Do While 
-            Dim xmlNode As Xml.XmlNode
-            Dim xmlNodeReader As Xml.XmlNodeReader
-            xmlNode = xmlDoc.DocumentElement.SelectSingleNode("courses")
-            xmlNodeReader = New Xml.XmlNodeReader(xmlNode)
-            (xmlNodeReader.Read())
+        xmlNode = xmlDoc.DocumentElement.SelectSingleNode("courses")
+        xmlNodeReader = New Xml.XmlNodeReader(xmlNode)
+        Do While (xmlNodeReader.Read())
             Select Case xmlNodeReader.NodeType
                 Case Xml.XmlNodeType.Element
                     If xmlNodeReader.LocalName = "course" Then
@@ -126,6 +95,19 @@ Public Class clsCourses
                                     Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, course.id)
                                 Case "parent"
                                     Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, course.parent)
+                            End Select
+                        End While
+                    ElseIf xmlNodeReader.LocalName = "folder" Then
+                        folder = New clsFolder
+                        _folders.Add(folder)
+                        While xmlNodeReader.MoveToNextAttribute
+                            Select Case xmlNodeReader.LocalName
+                                Case "name"
+                                    folder.Name = xmlNodeReader.Value
+                                Case "id"
+                                    Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, folder.id)
+                                Case "parent"
+                                    Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, folder.parent)
                             End Select
                         End While
                     ElseIf xmlNodeReader.LocalName.StartsWith("waypoint") Then
@@ -163,13 +145,14 @@ Public Class clsCourses
                                     Double.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, waypoint.Speed)
                             End Select
                         End While
-                    End If
+                        End If
             End Select
         Loop
         _courses.Sort(AddressOf SortCourses)
         Me.RecalcCoursesID()
 
     End Sub
+
     ''' <summary>
     ''' Draw courses
     ''' </summary>

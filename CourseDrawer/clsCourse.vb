@@ -1,4 +1,7 @@
 ﻿Public Class clsCourse
+
+    Friend folder As Object
+
     Public Shared Event SelectionChanged(ByRef course As clsCourse)
     Public Shared Property CircleDiameter As Integer
     Private Shared _isAnySelected As Boolean
@@ -6,6 +9,8 @@
     Private _selectedWP As Integer
     Public Property Name As String
     Public Property id As Integer
+    Public Property parent As Integer
+
     Public ReadOnly Property WPCount As Integer
         Get
             Return _waypoints.Count
@@ -34,6 +39,7 @@
         Me.New()
         Me.Name = Name
         Me.id = id
+        Me.parent = parent
     End Sub
     ''' <summary>
     ''' Append waypoint to course
@@ -262,6 +268,7 @@
         Dim idx As Integer = 1
         el.Add(New XAttribute("name", Me.Name))
         el.Add(New XAttribute("id", Me.id.ToString))
+        el.Add(New XAttribute("parent", Me.parent.ToString))
         For Each wp As clsWaypoint In _waypoints
             el.Add(wp.getXML(idx))
             idx += 1
@@ -416,9 +423,4 @@
             End If
         End If
     End Function
-
-    Function parent() As Object
-        Throw New NotImplementedException
-    End Function
-
 End Class

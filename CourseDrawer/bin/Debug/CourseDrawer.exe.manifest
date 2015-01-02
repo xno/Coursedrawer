@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CourseDrawer.exe" size="328616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CourseDrawer.exe" size="329640">
       <assemblyIdentity name="CourseDrawer" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>b+cOldLcoBEgYJfjunLM1gd47dlcmQYElkCF12xd1Pk=</dsig:DigestValue>
+        <dsig:DigestValue>u3c01LoYpRJi8TVxfqAKMLawdKo+pq9IVFOmjjgeGRs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
