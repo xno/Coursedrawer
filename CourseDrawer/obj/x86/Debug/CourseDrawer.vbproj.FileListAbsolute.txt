@@ -12,5 +12,3 @@ C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\bin\Debug\CourseDraw
 C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.exe.manifest
 C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.application
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.vbproj.GenerateResource.Cache
-C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\bin\Debug\CourseDrawer.exe.CodeAnalysisLog.xml
-C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\bin\Debug\CourseDrawer.exe.lastcodeanalysissucceeded

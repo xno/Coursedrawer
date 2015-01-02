@@ -4,7 +4,6 @@
 ''' <remarks>Singleton class for wrapping courses</remarks>
 Public Class clsCourses
     Private _courses As List(Of clsCourse)
-    Private _folders As List(Of clsFolder)
     Private _selectedWP As clsWaypoint
     Private _seledtedCrs As Integer
     Public ReadOnly Property Count As Integer
@@ -13,7 +12,6 @@ Public Class clsCourses
         End Get
     End Property
     Private Shared _instance As clsCourses
-    Private Shared _instance1 As clsFolders
     ''' <summary>
     ''' Constructor
     ''' </summary>
@@ -72,7 +70,6 @@ Public Class clsCourses
         Dim xmlNodeReader As Xml.XmlNodeReader
         Dim course As New clsCourse
         Dim waypoint As New clsWaypoint
-        Dim folder As New clsFolder
         Dim stringA() As String
 
         If file = String.Empty Then Exit Sub
@@ -95,19 +92,6 @@ Public Class clsCourses
                                     Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, course.id)
                                 Case "parent"
                                     Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, course.parent)
-                            End Select
-                        End While
-                    ElseIf xmlNodeReader.LocalName = "folder" Then
-                        folder = New clsFolder
-                        _folders.Add(folder)
-                        While xmlNodeReader.MoveToNextAttribute
-                            Select Case xmlNodeReader.LocalName
-                                Case "name"
-                                    folder.Name = xmlNodeReader.Value
-                                Case "id"
-                                    Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, folder.id)
-                                Case "parent"
-                                    Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, folder.parent)
                             End Select
                         End While
                     ElseIf xmlNodeReader.LocalName.StartsWith("waypoint") Then
@@ -311,8 +295,8 @@ Public Class clsCourses
         courses = New XElement("courses")
         For Each crs In _courses
             courses.Add(crs.getXML)
-        Next
 
+        Next
         root.Add(courses)
         doc.Document.Add(root)
 

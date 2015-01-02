@@ -17,6 +17,9 @@ Public Class clsFolders
     ''' Constructor
     ''' </summary>
     ''' <remarks></remarks>
+    Public Sub ReadXML(ByVal file As String)
+
+    End Sub
     Private Sub New()
         _folders = New List(Of clsFolder)
     End Sub

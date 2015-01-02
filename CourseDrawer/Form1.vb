@@ -200,6 +200,8 @@
 
         clsCourses.getInstance(True).ReadXML(filename)
         Me.fillCourseList()
+        clsFolders.getInstance(True).ReadXML(filename)
+        Me.fillFolderList()
 
     End Sub
 
@@ -209,6 +211,12 @@
         Me.CheckedListBox1.Items.Clear()
         For Each pair As KeyValuePair(Of String, Boolean) In crsList
             Me.CheckedListBox1.Items.Add(pair.Key, pair.Value)
+        Next
+    End Sub
+    Private Sub fillFolderList()
+        Dim crsList As Dictionary(Of String, Boolean)
+        crsList = clsFolders.getInstance.FolderList
+        For Each pair As KeyValuePair(Of String, Boolean) In crsList
         Next
     End Sub
 

@@ -6,7 +6,7 @@ CourseDrawer
 </name>
 </assembly>
 <members>
-<member name="M:CourseDrawer.clsFolders.#ctor">
+<member name="M:CourseDrawer.clsFolders.ReadXML(System.String)">
 	<summary>
  Constructor
  </summary>
@@ -36,6 +36,12 @@ CourseDrawer
  </summary>
 	<param name="Name">Course name</param>
 	<param name="id">Course ID</param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsFolder.getXML">
+	<summary>
+ Create XML of folder
+ </summary>
+	<returns></returns>
 	<remarks></remarks>
 </member><member name="M:CourseDrawer.Form1.butLoad_Click(System.Object,System.EventArgs)">
 	<summary>
