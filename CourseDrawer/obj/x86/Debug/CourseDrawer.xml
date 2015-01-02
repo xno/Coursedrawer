@@ -353,6 +353,66 @@ CourseDrawer
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources._04_maps">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.butAddNode">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.butDelCrs">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.butDeleteNode">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.butFillNodes">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.butInsertNode">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.butMap">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.butMove">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.butNewCrs">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.butOpen">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.butRecalcDir">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.butSave">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.butSelect">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.butZoom">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CourseDrawer.My.Resources.Resources.magnify">
+	<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
 </member><member name="T:CourseDrawer.My.Resources.Resources">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
