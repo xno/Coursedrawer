@@ -1,4 +1,8 @@
-﻿Public Class clsFolder
+﻿Imports System
+Imports System.Xml
+Imports System.IO
+Imports System.Xml.XPath
+Public Class clsFolder
     Private _folders As List(Of clsFolder)
 
     Sub New()
@@ -52,6 +56,25 @@
             End Select
         Loop
     End Sub
+    Private Function check_xml_entry(ByVal file As String, _
+    ByVal xml_path As String, ByVal value_name As String) As String
+        Dim return_value As String
+        Try
+            Dim xd As New XmlDocument()
+            xd.Load(file)
+            ' Find the node where the Person's attribute ID is 1 using its XPath.
+            Dim nod As XmlNode = xd.SelectSingleNode(xml_path)
+            If nod IsNot Nothing Then
+                return_value = "True"
+            Else
+                return_value = "False"
+            End If
+            xd.Save(file)
+        Catch ex As Exception
+            return_value = ex.Message
+        End Try
+        Return return_value
+    End Function
     ''' <summary>
     ''' Create XML of folder
     ''' </summary>
@@ -68,4 +91,65 @@
         Next
         Return e1
     End Function
+    Private Function add_to_xml(ByVal file As String, _
+    ByVal xml_path As String, ByVal value_name As String, _
+    ByVal value As String) As String
+        Dim return_value As String
+        Try
+            Dim cr As String = Environment.NewLine
+            Dim dool As String
+            dool = Out_xml_from_xml_path(xml_path, value_name, value, Nothing, Nothing)
+            Dim xd As New XmlDocument()
+            xd.Load(file)
+            Dim docFrag As XmlDocumentFragment = xd.CreateDocumentFragment()
+            docFrag.InnerXml = dool
+            Dim root As XmlNode = xd.DocumentElement
+            root.AppendChild(docFrag)
+            xd.Save(file)
+            return_value = "True"
+        Catch ex As Exception
+            return_value = ex.Message
+        End Try
+        Return return_value
+    End Function
+
+    Private Function Out_xml_from_xml_path(ByVal xml_path As String, _
+   ByVal value_name As String, ByVal value As String, _
+   ByVal att_name As String, ByVal att_value As String) As String
+        Dim return_value As String
+        Dim a, b, c, d As String
+        Dim x, y, z As Integer
+        Dim master As String
+        Dim buffer As String
+        If String.IsNullOrEmpty(att_name) = False Then
+            master = "<" & value_name & " " & att_name & "=" & _
+            Chr(34) & att_value & Chr(34) & ">" & value & "</" & value_name & ">"
+        Else
+            master = "<" & value_name & ">" & value & "</" & value_name & ">"
+        End If
+        a = xml_path.Trim("/")
+        x = a.IndexOf("/")
+        If x < 1 Then ' Is Root
+            return_value = master
+            GoTo 1
+        End If
+        b = a.Remove(0, x + 1)
+        d = b
+        Do
+            x = d.LastIndexOf("/")
+            If x < 1 Then ' Is Last Key
+                master = "<" & d & ">" & master & "</" & d & ">"
+                return_value = master
+                Exit Do
+            End If
+            b = d.Remove(0, x + 1) ' that is without /
+            c = d.Remove(0, x) ' that is with /
+            master = "<" & b & ">" & master & "</" & b & ">"
+            a = d.Replace(c, "")
+            d = a
+        Loop
+1:
+        Return master
+    End Function
+
 End Class
