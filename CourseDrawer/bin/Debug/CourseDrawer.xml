@@ -6,44 +6,7 @@ CourseDrawer
 </name>
 </assembly>
 <members>
-<member name="M:CourseDrawer.clsFolders.ReadXML(System.String)">
-	<summary>
- Constructor
- </summary>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsFolders.getInstance(System.Boolean)">
-	<summary>
- Get instance of singleton class
- </summary>
-	<param name="forceNew">force create new instance</param>
-	<returns>Instance of courses collection</returns>
-	<remarks></remarks>
-</member><member name="P:CourseDrawer.clsFolders.FolderList">
-	<summary>
- Get list of course name and hidden attribute
- </summary>
-	<value></value>
-	<returns>Dictionary of course names and hidden attribute</returns>
-	<remarks></remarks>
-</member><member name="T:CourseDrawer.clsFolders">
-	<summary>
- Class for collection of folders
- </summary>
-	<remarks>Singleton class for wrapping folders</remarks>
-</member><member name="M:CourseDrawer.clsFolder.#ctor(System.String,System.Int32)">
-	<summary>
- Constructor
- </summary>
-	<param name="Name">Course name</param>
-	<param name="id">Course ID</param>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsFolder.getXML">
-	<summary>
- Create XML of folder
- </summary>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.Form1.butLoad_Click(System.Object,System.EventArgs)">
+<member name="M:CourseDrawer.Form1.butLoad_Click(System.Object,System.EventArgs)">
 	<summary>
  Loads bitmap as background
  </summary>
@@ -254,6 +217,19 @@ CourseDrawer
  Class for collection of courses
  </summary>
 	<remarks>Singleton class for wrapping courses</remarks>
+</member><member name="M:CourseDrawer.clsFolder.#ctor(System.String,System.Int32)">
+	<summary>
+ Constructor
+ </summary>
+	<param name="Name">Course name</param>
+	<param name="id">Course ID</param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsFolder.getXML">
+	<summary>
+ Create XML of folder
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
 </member><member name="M:CourseDrawer.clsCourse.#ctor">
 	<summary>
  Constructor
@@ -381,6 +357,30 @@ CourseDrawer
 	<param name="pt2"></param>
 	<returns></returns>
 	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsFolders.ReadXML(System.String)">
+	<summary>
+ Constructor
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsFolders.getInstance(System.Boolean)">
+	<summary>
+ Get instance of singleton class
+ </summary>
+	<param name="forceNew">force create new instance</param>
+	<returns>Instance of courses collection</returns>
+	<remarks></remarks>
+</member><member name="P:CourseDrawer.clsFolders.FolderList">
+	<summary>
+ Get list of course name and hidden attribute
+ </summary>
+	<value></value>
+	<returns>Dictionary of course names and hidden attribute</returns>
+	<remarks></remarks>
+</member><member name="T:CourseDrawer.clsFolders">
+	<summary>
+ Class for collection of folders
+ </summary>
+	<remarks>Singleton class for wrapping folders</remarks>
 </member><member name="P:CourseDrawer.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.

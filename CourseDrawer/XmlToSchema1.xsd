@@ -21,7 +21,7 @@
         <xs:element name="courseplayWages">
           <xs:complexType>
             <xs:attribute name="active" type="xs:boolean" use="required" />
-            <xs:attribute name="wagePerHour" type="xs:unsignedShort" use="required" />
+            <xs:attribute name="wagePerHour" type="xs:integer" use="required" />
           </xs:complexType>
         </xs:element>
         <xs:element name="courseplayIngameMap">
@@ -33,7 +33,7 @@
         </xs:element>
         <xs:element name="courseManagement">
           <xs:complexType>
-            <xs:attribute name="batchWriteSize" type="xs:unsignedShort" use="required" />
+            <xs:attribute name="batchWriteSize" type="xs:integer" use="required" />
           </xs:complexType>
         </xs:element>
         <xs:element name="courses">
@@ -44,83 +44,17 @@
                   <xs:sequence>
                     <xs:element name="waypoint1">
                       <xs:complexType>
-                        <xs:attribute name="pos" type="xs:string" use="required" />
                         <xs:attribute name="angle" type="xs:decimal" use="required" />
-                        <xs:attribute name="rev" type="xs:unsignedByte" use="optional" />
+                        <xs:attribute name="speed" type="xs:integer" use="required" />
+                        <xs:attribute name="turnend" type="xs:unsignedByte" use="optional" />
+                        <xs:attribute name="pos" type="xs:string" use="required" />
+                        <xs:attribute name="crossing" type="xs:unsignedByte" use="optional" />
+                        <xs:attribute name="turnstart" type="xs:unsignedByte" use="optional" />
                         <xs:attribute name="wait" type="xs:unsignedByte" use="optional" />
-                        <xs:attribute name="crossing" type="xs:unsignedByte" use="required" />
-                        <xs:attribute name="speed" type="xs:double" use="required" />
+                        <xs:attribute name="rev" type="xs:unsignedByte" use="optional" />
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="waypoint2">
-                      <xs:complexType>
-                        <xs:attribute name="pos" type="xs:string" use="required" />
-                        <xs:attribute name="angle" type="xs:decimal" use="required" />
-                        <xs:attribute name="speed" type="xs:decimal" use="required" />
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element minOccurs="0" name="waypoint3">
-                      <xs:complexType>
-                        <xs:attribute name="angle" type="xs:decimal" use="required" />
-                        <xs:attribute name="speed" type="xs:unsignedByte" use="required" />
-                        <xs:attribute name="pos" type="xs:string" use="required" />
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element minOccurs="0" name="waypoint4">
-                      <xs:complexType>
-                        <xs:attribute name="angle" type="xs:decimal" use="required" />
-                        <xs:attribute name="speed" type="xs:unsignedByte" use="required" />
-                        <xs:attribute name="pos" type="xs:string" use="required" />
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element minOccurs="0" name="waypoint5">
-                      <xs:complexType>
-                        <xs:attribute name="angle" type="xs:decimal" use="required" />
-                        <xs:attribute name="speed" type="xs:unsignedByte" use="required" />
-                        <xs:attribute name="pos" type="xs:string" use="required" />
-                        <xs:attribute name="wait" type="xs:unsignedByte" use="required" />
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element minOccurs="0" name="waypoint6">
-                      <xs:complexType>
-                        <xs:attribute name="angle" type="xs:decimal" use="required" />
-                        <xs:attribute name="speed" type="xs:unsignedByte" use="required" />
-                        <xs:attribute name="pos" type="xs:string" use="required" />
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element minOccurs="0" name="waypoint7">
-                      <xs:complexType>
-                        <xs:attribute name="angle" type="xs:decimal" use="required" />
-                        <xs:attribute name="speed" type="xs:unsignedByte" use="required" />
-                        <xs:attribute name="pos" type="xs:string" use="required" />
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element minOccurs="0" name="waypoint8">
-                      <xs:complexType>
-                        <xs:attribute name="angle" type="xs:decimal" use="required" />
-                        <xs:attribute name="speed" type="xs:unsignedByte" use="required" />
-                        <xs:attribute name="pos" type="xs:string" use="required" />
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element minOccurs="0" name="waypoint9">
-                      <xs:complexType>
-                        <xs:attribute name="angle" type="xs:decimal" use="required" />
-                        <xs:attribute name="speed" type="xs:unsignedByte" use="required" />
-                        <xs:attribute name="pos" type="xs:string" use="required" />
-                      </xs:complexType>
-                    </xs:element>
-                    <xs:element minOccurs="0" name="waypoint10">
-                      <xs:complexType>
-                        <xs:attribute name="angle" type="xs:decimal" use="required" />
-                        <xs:attribute name="speed" type="xs:unsignedByte" use="required" />
-                        <xs:attribute name="pos" type="xs:string" use="required" />
-                        <xs:attribute name="crossing" type="xs:unsignedByte" use="required" />
-                      </xs:complexType>
-                    </xs:element>
-                  </xs:sequence>
-                  <xs:attribute name="name" type="xs:string" use="required" />
-                  <xs:attribute name="id" type="xs:unsignedShort" use="required" />
-                  <xs:attribute name="parent" type="xs:unsignedByte" use="required" />
+                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
