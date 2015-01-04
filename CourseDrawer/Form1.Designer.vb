@@ -75,6 +75,10 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.butCrsUp = New System.Windows.Forms.Button()
         Me.butCrsDown = New System.Windows.Forms.Button()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
         Me.panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -276,8 +280,8 @@ Partial Class Form1
         'panel1
         '
         Me.panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panel1.AutoScroll = True
         Me.panel1.Controls.Add(Me.PictureBox1)
         Me.panel1.Location = New System.Drawing.Point(0, 42)
@@ -304,16 +308,18 @@ Partial Class Form1
         'CheckedListBox1
         '
         Me.CheckedListBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CheckedListBox1.FormattingEnabled = True
         Me.CheckedListBox1.Location = New System.Drawing.Point(814, 43)
         Me.CheckedListBox1.Name = "CheckedListBox1"
-        Me.CheckedListBox1.Size = New System.Drawing.Size(157, 184)
+        Me.CheckedListBox1.Size = New System.Drawing.Size(157, 169)
         Me.CheckedListBox1.TabIndex = 3
         '
         'Panel2
         '
         Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.Controls.Add(Me.CheckBox2)
+        Me.Panel2.Controls.Add(Me.CheckBox1)
         Me.Panel2.Controls.Add(Me.butCalcAngleSel)
         Me.Panel2.Controls.Add(Me.ChWP_Cross)
         Me.Panel2.Controls.Add(Me.ChWP_Wait)
@@ -326,14 +332,14 @@ Partial Class Form1
         Me.Panel2.Controls.Add(Me.TBWP_Y)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.TBWP_X)
-        Me.Panel2.Location = New System.Drawing.Point(814, 324)
+        Me.Panel2.Location = New System.Drawing.Point(814, 336)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(157, 193)
+        Me.Panel2.Size = New System.Drawing.Size(157, 177)
         Me.Panel2.TabIndex = 4
         '
         'butCalcAngleSel
         '
-        Me.butCalcAngleSel.Location = New System.Drawing.Point(6, 166)
+        Me.butCalcAngleSel.Location = New System.Drawing.Point(6, 152)
         Me.butCalcAngleSel.Name = "butCalcAngleSel"
         Me.butCalcAngleSel.Size = New System.Drawing.Size(75, 23)
         Me.butCalcAngleSel.TabIndex = 4
@@ -353,7 +359,7 @@ Partial Class Form1
         'ChWP_Wait
         '
         Me.ChWP_Wait.AutoSize = True
-        Me.ChWP_Wait.Location = New System.Drawing.Point(78, 112)
+        Me.ChWP_Wait.Location = New System.Drawing.Point(87, 112)
         Me.ChWP_Wait.Name = "ChWP_Wait"
         Me.ChWP_Wait.Size = New System.Drawing.Size(48, 17)
         Me.ChWP_Wait.TabIndex = 3
@@ -457,7 +463,7 @@ Partial Class Form1
         'butSelectAll
         '
         Me.butSelectAll.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.butSelectAll.Location = New System.Drawing.Point(814, 233)
+        Me.butSelectAll.Location = New System.Drawing.Point(814, 218)
         Me.butSelectAll.Name = "butSelectAll"
         Me.butSelectAll.Size = New System.Drawing.Size(72, 23)
         Me.butSelectAll.TabIndex = 6
@@ -471,13 +477,15 @@ Partial Class Form1
         'Panel3
         '
         Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.Controls.Add(Me.TextBox1)
         Me.Panel3.Controls.Add(Me.TBCrs_Name)
+        Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.TBCrs_ID)
         Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Location = New System.Drawing.Point(814, 262)
+        Me.Panel3.Location = New System.Drawing.Point(814, 247)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(157, 56)
+        Me.Panel3.Size = New System.Drawing.Size(157, 83)
         Me.Panel3.TabIndex = 7
         '
         'TBCrs_Name
@@ -490,7 +498,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(3, 34)
+        Me.Label6.Location = New System.Drawing.Point(2, 34)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(35, 13)
         Me.Label6.TabIndex = 2
@@ -499,7 +507,7 @@ Partial Class Form1
         'TBCrs_ID
         '
         Me.TBCrs_ID.Enabled = False
-        Me.TBCrs_ID.Location = New System.Drawing.Point(42, 6)
+        Me.TBCrs_ID.Location = New System.Drawing.Point(41, 5)
         Me.TBCrs_ID.Name = "TBCrs_ID"
         Me.TBCrs_ID.Size = New System.Drawing.Size(112, 20)
         Me.TBCrs_ID.TabIndex = 1
@@ -508,7 +516,7 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(3, 9)
+        Me.Label5.Location = New System.Drawing.Point(2, 8)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(21, 13)
         Me.Label5.TabIndex = 0
@@ -517,7 +525,7 @@ Partial Class Form1
         'butCrsUp
         '
         Me.butCrsUp.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.butCrsUp.Location = New System.Drawing.Point(911, 233)
+        Me.butCrsUp.Location = New System.Drawing.Point(907, 218)
         Me.butCrsUp.Name = "butCrsUp"
         Me.butCrsUp.Size = New System.Drawing.Size(29, 23)
         Me.butCrsUp.TabIndex = 8
@@ -527,12 +535,48 @@ Partial Class Form1
         'butCrsDown
         '
         Me.butCrsDown.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.butCrsDown.Location = New System.Drawing.Point(942, 233)
+        Me.butCrsDown.Location = New System.Drawing.Point(942, 218)
         Me.butCrsDown.Name = "butCrsDown"
         Me.butCrsDown.Size = New System.Drawing.Size(29, 23)
         Me.butCrsDown.TabIndex = 9
         Me.butCrsDown.Text = "Dn"
         Me.butCrsDown.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(87, 135)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(64, 17)
+        Me.CheckBox1.TabIndex = 4
+        Me.CheckBox1.Text = "turnstart"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(87, 158)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(62, 17)
+        Me.CheckBox2.TabIndex = 5
+        Me.CheckBox2.Text = "turnend"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(42, 57)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(112, 20)
+        Me.TextBox1.TabIndex = 5
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(2, 60)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(36, 13)
+        Me.Label7.TabIndex = 4
+        Me.Label7.Text = "Folder"
         '
         'Form1
         '
@@ -614,5 +658,9 @@ Partial Class Form1
     Friend WithEvents ToolStripTextBox1 As System.Windows.Forms.ToolStripTextBox
     Friend WithEvents butCrsUp As System.Windows.Forms.Button
     Friend WithEvents butCrsDown As System.Windows.Forms.Button
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 
 End Class

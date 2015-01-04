@@ -101,17 +101,31 @@ Public Class clsCourses
                         End If
                         While xmlNodeReader.MoveToNextAttribute
                             Select Case xmlNodeReader.LocalName
+                                Case "angle"
+                                    Double.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, waypoint.Angle)
+                                Case "speed"
+                                    Double.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, waypoint.Speed)
+                                Case "turnend"
+                                    If xmlNodeReader.Value = "1" Then
+                                        waypoint.Cross = True
+                                    Else
+                                        waypoint.Cross = False
+                                    End If
                                 Case "pos"
                                     stringA = xmlNodeReader.Value.Split(" "c)
                                     Double.TryParse(stringA(0), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, waypoint.Pos_X)
                                     Double.TryParse(stringA(1), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, waypoint.Pos_Y)
-                                Case "angle"
-                                    Double.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, waypoint.Angle)
-                                Case "rev"
+                                Case "crossing"
                                     If xmlNodeReader.Value = "1" Then
-                                        waypoint.Reverse = True
+                                        waypoint.Cross = True
                                     Else
-                                        waypoint.Reverse = False
+                                        waypoint.Cross = False
+                                    End If
+                                Case "turnstart"
+                                    If xmlNodeReader.Value = "1" Then
+                                        waypoint.Cross = True
+                                    Else
+                                        waypoint.Cross = False
                                     End If
                                 Case "wait"
                                     If xmlNodeReader.Value = "1" Then
@@ -119,14 +133,12 @@ Public Class clsCourses
                                     Else
                                         waypoint.Wait = False
                                     End If
-                                Case "crossing"
+                                Case "rev"
                                     If xmlNodeReader.Value = "1" Then
-                                        waypoint.Cross = True
+                                        waypoint.Reverse = True
                                     Else
-                                        waypoint.Cross = False
+                                        waypoint.Reverse = False
                                     End If
-                                Case "speed"
-                                    Double.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, waypoint.Speed)
                             End Select
                         End While
                         End If
