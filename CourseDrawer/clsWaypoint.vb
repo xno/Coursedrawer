@@ -1,8 +1,5 @@
 ﻿Public Class clsWaypoint
 
-    Dim turnstart As Object
-    Dim turnend As Object
-
     Public Shared Event SelectionChanged(ByRef wp As clsWaypoint)
     Private Shared _isAnySelected As Boolean
     Public Shared Property mapSize As Size
@@ -40,6 +37,8 @@
     Public Property Reverse As Boolean
     Public Property Wait As Boolean
     Public Property Cross As Boolean
+    Public Property TurnStart As Boolean
+    Public Property TurnEnd As Boolean
     Public Property Speed As Double
     Public Property isSelected As Boolean
     Public ReadOnly Property ReverseTxt As String
@@ -63,6 +62,24 @@
     Public ReadOnly Property WaitTxt As String
         Get
             If _Wait = True Then
+                Return "1"
+            Else
+                Return "0"
+            End If
+        End Get
+    End Property
+    Public ReadOnly Property TurnStartTxt As String
+        Get
+            If _TurnStart = True Then
+                Return "1"
+            Else
+                Return "0"
+            End If
+        End Get
+    End Property
+    Public ReadOnly Property TurnEndTxt As String
+        Get
+            If _TurnEnd = True Then
                 Return "1"
             Else
                 Return "0"
@@ -145,8 +162,8 @@
         el.Add(New XAttribute("angle", Me.Angle.ToString(System.Globalization.CultureInfo.InvariantCulture)))
         el.Add(New XAttribute("rev", Me.ReverseTxt))
         el.Add(New XAttribute("wait", Me.WaitTxt))
-        el.Add(New XAttribute("turnstart", Me.turnstart))
-         el.Add(New XAttribute("turnend", Me.turnend))
+        el.Add(New XAttribute("turnstart", Me.TurnStartTxt))
+        el.Add(New XAttribute("turnend", Me.TurnEndTxt))
         el.Add(New XAttribute("crossing", Me.CrossTxt))
         el.Add(New XAttribute("speed", Me.Speed.ToString(System.Globalization.CultureInfo.InvariantCulture)))
         Return el

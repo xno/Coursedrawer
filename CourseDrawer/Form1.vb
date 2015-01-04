@@ -361,7 +361,6 @@
         Me.selectedWP.Cross = ChWP_Cross.Checked
     End Sub
 
-
     Private Sub butDeleteNode_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butDeleteNode.Click
         clsCourses.getInstance.deleteSelectedWP()
         Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
@@ -527,5 +526,13 @@
 
     Private Sub CheckedListBox1_MouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles CheckedListBox1.MouseClick
         Me.doListChange = True
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub ToolTip1_Popup(sender As Object, e As PopupEventArgs)
+
     End Sub
 End Class

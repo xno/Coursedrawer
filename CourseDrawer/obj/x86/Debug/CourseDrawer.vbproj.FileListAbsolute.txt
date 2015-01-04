@@ -14,3 +14,4 @@ C:\Users\Alfredo\Documents\GitHub\CourseDrawer\CourseDrawer\obj\x86\Debug\Course
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.vbproj.GenerateResource.Cache
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\bin\Debug\CourseDrawer.exe.CodeAnalysisLog.xml
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\bin\Debug\CourseDrawer.exe.lastcodeanalysissucceeded
+C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.vbprojResolveAssemblyReference.cache

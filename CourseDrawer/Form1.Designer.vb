@@ -53,6 +53,8 @@ Partial Class Form1
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TurnStart = New System.Windows.Forms.CheckBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.butCalcAngleSel = New System.Windows.Forms.Button()
         Me.ChWP_Cross = New System.Windows.Forms.CheckBox()
         Me.ChWP_Wait = New System.Windows.Forms.CheckBox()
@@ -65,20 +67,20 @@ Partial Class Form1
         Me.TBWP_Y = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TBWP_X = New System.Windows.Forms.MaskedTextBox()
+        Me.ChWP_TurnStart = New System.Windows.Forms.CheckBox()
+        Me.ChWP_TurnEnd = New System.Windows.Forms.CheckBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.butSelectAll = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TBCrs_Name = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TBCrs_ID = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.butCrsUp = New System.Windows.Forms.Button()
         Me.butCrsDown = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
         Me.panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -318,7 +320,7 @@ Partial Class Form1
         'Panel2
         '
         Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.Controls.Add(Me.CheckBox2)
+        Me.Panel2.Controls.Add(Me.TurnStart)
         Me.Panel2.Controls.Add(Me.CheckBox1)
         Me.Panel2.Controls.Add(Me.butCalcAngleSel)
         Me.Panel2.Controls.Add(Me.ChWP_Cross)
@@ -336,6 +338,26 @@ Partial Class Form1
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(157, 177)
         Me.Panel2.TabIndex = 4
+        '
+        'TurnStart
+        '
+        Me.TurnStart.AutoSize = True
+        Me.TurnStart.Location = New System.Drawing.Point(87, 158)
+        Me.TurnStart.Name = "TurnStart"
+        Me.TurnStart.Size = New System.Drawing.Size(70, 17)
+        Me.TurnStart.TabIndex = 5
+        Me.TurnStart.Text = "TurnStart"
+        Me.TurnStart.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(87, 135)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(67, 17)
+        Me.CheckBox1.TabIndex = 4
+        Me.CheckBox1.Text = "TurnEnd"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'butCalcAngleSel
         '
@@ -452,6 +474,20 @@ Partial Class Form1
         Me.TBWP_X.TabIndex = 1
         Me.TBWP_X.Text = "0"
         '
+        'ChWP_TurnStart
+        '
+        Me.ChWP_TurnStart.Location = New System.Drawing.Point(0, 0)
+        Me.ChWP_TurnStart.Name = "ChWP_TurnStart"
+        Me.ChWP_TurnStart.Size = New System.Drawing.Size(104, 24)
+        Me.ChWP_TurnStart.TabIndex = 0
+        '
+        'ChWP_TurnEnd
+        '
+        Me.ChWP_TurnEnd.Location = New System.Drawing.Point(0, 0)
+        Me.ChWP_TurnEnd.Name = "ChWP_TurnEnd"
+        Me.ChWP_TurnEnd.Size = New System.Drawing.Size(104, 24)
+        Me.ChWP_TurnEnd.TabIndex = 0
+        '
         'StatusStrip1
         '
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 516)
@@ -488,12 +524,28 @@ Partial Class Form1
         Me.Panel3.Size = New System.Drawing.Size(157, 83)
         Me.Panel3.TabIndex = 7
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(42, 57)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(112, 20)
+        Me.TextBox1.TabIndex = 5
+        '
         'TBCrs_Name
         '
         Me.TBCrs_Name.Location = New System.Drawing.Point(42, 31)
         Me.TBCrs_Name.Name = "TBCrs_Name"
         Me.TBCrs_Name.Size = New System.Drawing.Size(112, 20)
         Me.TBCrs_Name.TabIndex = 3
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(2, 60)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(36, 13)
+        Me.Label7.TabIndex = 4
+        Me.Label7.Text = "Folder"
         '
         'Label6
         '
@@ -541,42 +593,6 @@ Partial Class Form1
         Me.butCrsDown.TabIndex = 9
         Me.butCrsDown.Text = "Dn"
         Me.butCrsDown.UseVisualStyleBackColor = True
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(87, 135)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(64, 17)
-        Me.CheckBox1.TabIndex = 4
-        Me.CheckBox1.Text = "turnstart"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(87, 158)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(62, 17)
-        Me.CheckBox2.TabIndex = 5
-        Me.CheckBox2.Text = "turnend"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(42, 57)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(112, 20)
-        Me.TextBox1.TabIndex = 5
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(2, 60)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(36, 13)
-        Me.Label7.TabIndex = 4
-        Me.Label7.Text = "Folder"
         '
         'Form1
         '
@@ -631,6 +647,8 @@ Partial Class Form1
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents ChWP_Cross As System.Windows.Forms.CheckBox
     Friend WithEvents ChWP_Wait As System.Windows.Forms.CheckBox
+    Friend WithEvents ChWP_TurnStart As System.Windows.Forms.CheckBox
+    Friend WithEvents ChWP_TurnEnd As System.Windows.Forms.CheckBox
     Friend WithEvents ChWP_Rev As System.Windows.Forms.CheckBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -659,7 +677,7 @@ Partial Class Form1
     Friend WithEvents butCrsUp As System.Windows.Forms.Button
     Friend WithEvents butCrsDown As System.Windows.Forms.Button
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
+    Friend WithEvents TurnStart As System.Windows.Forms.CheckBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
 

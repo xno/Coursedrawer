@@ -130,6 +130,10 @@
                 pen = New Pen(Brushes.Yellow, 2)
             ElseIf waypoint.Reverse = True Then
                 pen = New Pen(Brushes.Pink, 1)
+            ElseIf waypoint.turnStart = True Then
+                pen = New Pen(Brushes.Orange, 1)
+            ElseIf waypoint.TurnEnd = True Then
+                pen = New Pen(Brushes.Salmon, 1)
             Else
                 pen = New Pen(Brushes.DarkBlue)
             End If
