@@ -30,7 +30,6 @@ Public Class clsFolder
         Dim xmlNode As Xml.XmlNode
         Dim xmlNodeReader As Xml.XmlNodeReader
         Dim folder As New clsFolder
-        Dim stringA() As String
         If file = String.Empty Then Exit Sub
         xmlDoc.Load(file)
         If xmlDoc Is Nothing Then Exit Sub
@@ -81,14 +80,14 @@ Public Class clsFolder
     ''' <returns></returns>
     ''' <remarks></remarks>
     Public Function getXML() As XElement
-        Dim e1 As New XElement("folder")
+        Dim f1 As New XElement("folder")
         Dim idx As Integer = 1
-        e1.Add(New XAttribute("name", Me.Name))
-        e1.Add(New XAttribute("id", Me.id.ToString))
-        e1.Add(New XAttribute("parent", Me.parent.ToString))
+        f1.Add(New XAttribute("name", Me.Name))
+        f1.Add(New XAttribute("id", Me.id.ToString))
+        f1.Add(New XAttribute("parent", Me.parent.ToString))
         For Each folder As clsFolder In _folders
-            e1.Add(folder.getXML())
+            f1.Add(folder.getXML())
         Next
-        Return e1
+        Return f1
     End Function
 End Class

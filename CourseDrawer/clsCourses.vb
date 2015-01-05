@@ -147,6 +147,7 @@ Public Class clsCourses
         _courses.Sort(AddressOf SortCourses)
         Me.RecalcCoursesID()
 
+
     End Sub
 
     ''' <summary>
@@ -307,7 +308,6 @@ Public Class clsCourses
         courses = New XElement("courses")
         For Each crs In _courses
             courses.Add(crs.getXML)
-
         Next
         root.Add(courses)
         doc.Document.Add(root)

@@ -158,14 +158,14 @@
     Public Function getXML(ByVal id As Integer) As XElement
         Dim myNam As String = "waypoint" & id
         Dim el As New XElement(myNam)
-        el.Add(New XAttribute("pos", Me.Pos_X.ToString(System.Globalization.CultureInfo.InvariantCulture) & " " & Me.Pos_Y.ToString(System.Globalization.CultureInfo.InvariantCulture)))
-        el.Add(New XAttribute("angle", Me.Angle.ToString(System.Globalization.CultureInfo.InvariantCulture)))
+        el.Add(New XAttribute("pos", Me.Pos_X.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) & " " & Me.Pos_Y.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)))
+        el.Add(New XAttribute("angle", Me.Angle.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)))
         el.Add(New XAttribute("rev", Me.ReverseTxt))
         el.Add(New XAttribute("wait", Me.WaitTxt))
         el.Add(New XAttribute("turnstart", Me.TurnStartTxt))
         el.Add(New XAttribute("turnend", Me.TurnEndTxt))
         el.Add(New XAttribute("crossing", Me.CrossTxt))
-        el.Add(New XAttribute("speed", Me.Speed.ToString(System.Globalization.CultureInfo.InvariantCulture)))
+        el.Add(New XAttribute("speed", Me.Speed.ToString("0", System.Globalization.CultureInfo.InvariantCulture)))
         Return el
     End Function
     ''' <summary>

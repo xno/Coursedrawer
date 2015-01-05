@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 12.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="12.0">
+ <Targets>
+  <Target Name="C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\bin\Debug\CourseDrawer.exe">
+   <Modules>
+    <Module Name="coursedrawer.exe">
+     <Namespaces>
+      <Namespace Name="CourseDrawer">
+       <Types>
+        <Type Name="clsCourse" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#SelectionChanged" Kind="Event" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2015-01-05 12:02:12Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare el primer parámetro de 'clsCourse.SelectionChangedEventHandler' como un objeto denominado 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare el segundo parámetro de 'clsCourse.SelectionChangedEventHandler' como EventArgs o una instancia de un tipo que extienda EventArgs, denominado 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="clsFolder" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#SelectionChanged" Kind="Event" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2015-01-05 12:02:12Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare el primer parámetro de 'clsFolder.SelectionChangedEventHandler' como un objeto denominado 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare el segundo parámetro de 'clsFolder.SelectionChangedEventHandler' como EventArgs o una instancia de un tipo que extienda EventArgs, denominado 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="clsFolders" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#SelectionChanged" Kind="Event" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2015-01-05 12:02:12Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare el primer parámetro de 'clsFolders.SelectionChangedEventHandler' como un objeto denominado 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare el segundo parámetro de 'clsFolders.SelectionChangedEventHandler' como EventArgs o una instancia de un tipo que extienda EventArgs, denominado 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="clsWaypoint" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#SelectionChanged" Kind="Event" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2015-01-05 12:02:12Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare el primer parámetro de 'clsWaypoint.SelectionChangedEventHandler' como un objeto denominado 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare el segundo parámetro de 'clsWaypoint.SelectionChangedEventHandler' como EventArgs o una instancia de un tipo que extienda EventArgs, denominado 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Form1" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="myZoomCursor" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2015-01-05 12:02:12Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer" File="Form1.Designer.vb" Line="7">'Form1' contiene el campo 'Form1.myZoomCursor' que es de tipo IDisposable: 'Cursor'. Cambie el método Dispose en 'Form1' para que llame a Dispose o Close en este campo.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009">
+   <Name>Declare los controladores de evento correctamente</Name>
+   <Description>Normalmente, los eventos .NET tienen dos parámetros que especifican el remitente del evento y los datos del mismo. Las signaturas del controlador de eventos deberían tener la siguiente forma: void MyEventHandler(object sender, EventArgs e). El parámetro 'sender' es siempre de tipo System.Object, incluso aunque fuera posible utilizar un tipo más específico. El parámetro 'e' es siempre de tipo System.EventArgs. Los eventos que no proporcionan datos del evento deberían utilizar el tipo delegado System.EventHandler. Los controladores de evento devuelven void para que puedan enviar cada evento a varios métodos de destino. Cualquier valor devuelto por el destino se perderá después de la primera llamada.</Description>
+   <Resolution Name="First">Declare el primer parámetro de {0} como un objeto denominado 'sender'.</Resolution>
+   <Resolution Name="Second">Declare el segundo parámetro de {0} como EventArgs o una instancia de un tipo que extienda EventArgs, denominado 'e'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182133.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213">
+   <Name>Aplique Dispose a los campos a los que se pueda</Name>
+   <Description>Si un tipo que implementa IDisposable posee campos que también implementan IDisposable, la implementación de Dispose() de los tipos encapsuladores debe llamar a Dispose() en todos los campos disponibles.</Description>
+   <Resolution Name="Default">{0} contiene el campo {1} que es de tipo IDisposable: {2}. Cambie el método Dispose en {0} para que llame a Dispose o Close en este campo.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182328.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="12.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Categoría</String>
+  <String Key="Certainty">Certeza</String>
+  <String Key="CollapseAll">Contraer todo</String>
+  <String Key="CheckId">Comprobar id.</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">errores</String>
+  <String Key="ExpandAll">Expandir todo</String>
+  <String Key="Help">Ayuda</String>
+  <String Key="Line">Línea</String>
+  <String Key="Messages">mensajes</String>
+  <String Key="LocationNotStoredInPdb">[Ubicación no almacenada en Pdb]</String>
+  <String Key="Project">Proyecto</String>
+  <String Key="Resolution">Resolución</String>
+  <String Key="Rule">Regla</String>
+  <String Key="RuleFile">Archivo de regla</String>
+  <String Key="RuleDescription">Descripción de la regla</String>
+  <String Key="Source">Origen</String>
+  <String Key="Status">Estado</String>
+  <String Key="Target">Círculos concéntricos</String>
+  <String Key="Warning">Advertencia</String>
+  <String Key="Warnings">advertencias</String>
+  <String Key="ReportTitle">Informe de análisis del código</String>
+ </Localized>
+</FxCopReport>
