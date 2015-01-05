@@ -135,11 +135,9 @@
   <ItemGroup>
     <Compile Include="clsCourses.vb" />
     <Compile Include="clsCourse.vb" />
-    <Compile Include="clsFolder.vb" />
     <Compile Include="clsFolders.vb" />
     <Compile Include="clsWaypoint.vb" />
     <Compile Include="courseplayHud.vb" />
-    <Compile Include="folder.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ClassDiagram3.cd" />
     <None Include="CourseDrawer_1_TemporaryKey.pfx" />
     <None Include="CourseDrawer_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />

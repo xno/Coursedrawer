@@ -217,19 +217,6 @@ CourseDrawer
  Class for collection of courses
  </summary>
 	<remarks>Singleton class for wrapping courses</remarks>
-</member><member name="M:CourseDrawer.clsFolder.#ctor(System.String,System.Int32)">
-	<summary>
- Constructor
- </summary>
-	<param name="Name">Course name</param>
-	<param name="id">Course ID</param>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsFolder.getXML">
-	<summary>
- Create XML of folder
- </summary>
-	<returns></returns>
-	<remarks></remarks>
 </member><member name="M:CourseDrawer.clsCourse.#ctor">
 	<summary>
  Constructor

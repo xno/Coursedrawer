@@ -3,10 +3,9 @@
 ''' </summary>
 ''' <remarks>Singleton class for wrapping folders</remarks>
 Public Class clsFolders
-    Private _folders As List(Of clsFolder)
+    Private _folders As List(Of clsFolders)
     Private _seledtedFrs As Integer
     Dim Hidden As Boolean
-    Public Shared Event SelectionChanged(ByRef folder As clsFolder)
     Public Property Name As String
     Public Property id As Object
     Public Property parent As Object
@@ -24,7 +23,7 @@ Public Class clsFolders
         Dim xmlDoc As New Xml.XmlDocument()
         Dim xmlNode As Xml.XmlNode
         Dim xmlNodeReader As Xml.XmlNodeReader
-        Dim folder As New clsFolder
+        Dim folder As New clsFolders
         If file = String.Empty Then Exit Sub
         xmlDoc.Load(file)
         If xmlDoc Is Nothing Then Exit Sub
@@ -34,7 +33,7 @@ Public Class clsFolders
             Select Case xmlNodeReader.NodeType
                 Case Xml.XmlNodeType.Element
                     If xmlNodeReader.LocalName = "folder" Then
-                        folder = New clsFolder
+                        folder = New clsFolders
                         _folders.Add(folder)
                         While xmlNodeReader.MoveToNextAttribute
                             Select Case xmlNodeReader.LocalName
@@ -51,7 +50,7 @@ Public Class clsFolders
         Loop
     End Sub
     Private Sub New()
-        _folders = New List(Of clsFolder)
+        _folders = New List(Of clsFolders)
     End Sub
     ''' <summary>
     ''' Get instance of singleton class
@@ -74,7 +73,7 @@ Public Class clsFolders
     Public ReadOnly Property FolderList As Dictionary(Of String, Boolean)
         Get
             Dim dir As New Dictionary(Of String, Boolean)
-            For Each frs As clsFolder In _folders
+            For Each frs As clsFolders In _folders
                 dir.Add(frs.parent.ToString & " : " & frs.Name, Not Hidden)
             Next
             Return dir
@@ -82,15 +81,15 @@ Public Class clsFolders
     End Property
 
     Public Function getXML() As XElement
-        Dim f1 As New XElement("folder")
+        Dim e1 As New XElement("folder")
         Dim idx As Integer = 1
-        f1.Add(New XAttribute("name", Me.Name))
-        f1.Add(New XAttribute("id", Me.id.ToString))
-        f1.Add(New XAttribute("parent", Me.parent.ToString))
-        For Each folder As clsFolder In _folders
-            f1.Add(folder.getXML())
+        e1.Add(New XAttribute("name", Me.Name))
+        e1.Add(New XAttribute("id", Me.id.ToString))
+        e1.Add(New XAttribute("parent", Me.parent.ToString))
+        For Each folder As clsFolders In _folders
+            e1.Add(folder.getXML())
         Next
-        Return f1
+        Return e1
     End Function
 
 End Class
