@@ -290,6 +290,8 @@
             Me.ChWP_Rev.Checked = False
             Me.ChWP_Cross.Checked = False
             Me.ChWP_Wait.Checked = False
+            Me.ChWP_TurnStart.Checked = False
+            Me.ChWP_TurnEnd.Checked = False
             Me.TBWP_X.Enabled = False
             Me.TBWP_Y.Enabled = False
             Me.TBWP_Angle.Enabled = False
@@ -297,6 +299,8 @@
             Me.ChWP_Rev.Enabled = False
             Me.ChWP_Cross.Enabled = False
             Me.ChWP_Wait.Enabled = False
+            Me.ChWP_TurnStart.Enabled = False
+            Me.ChWP_TurnEnd.Enabled = False
 
         Else
             Me.TBWP_X.Enabled = True
@@ -306,6 +310,8 @@
             Me.ChWP_Rev.Enabled = True
             Me.ChWP_Cross.Enabled = True
             Me.ChWP_Wait.Enabled = True
+            Me.ChWP_TurnStart.Enabled = True
+            Me.ChWP_TurnEnd.Enabled = True
             Me.butCalcAngleSel.Enabled = True
             Me.butRecalcAngleCrs.Enabled = True
             Me.sButFillNodes.Enabled = True
@@ -318,6 +324,8 @@
             Me.ChWP_Rev.Checked = Me.selectedWP.Reverse
             Me.ChWP_Cross.Checked = Me.selectedWP.Cross
             Me.ChWP_Wait.Checked = Me.selectedWP.Wait
+            Me.ChWP_TurnStart.Checked = Me.selectedWP.TurnStart
+            Me.ChWP_TurnEnd.Checked = Me.selectedWP.TurnEnd
 
             Me.butDeleteNode.Enabled = True
             Me.butInsertNode.Enabled = True
@@ -349,6 +357,14 @@
     Private Sub ChWP_Rev_CheckStateChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChWP_Rev.CheckStateChanged
         If Me.selectedWP Is Nothing Then Exit Sub
         Me.selectedWP.Reverse = ChWP_Rev.Checked
+    End Sub
+    Private Sub ChWP_TurnStart_CheckStateChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChWP_TurnStart.CheckStateChanged
+        If Me.selectedWP Is Nothing Then Exit Sub
+        Me.selectedWP.TurnStart = ChWP_Rev.Checked
+    End Sub
+    Private Sub ChWP_TurnEnd_CheckStateChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChWP_TurnEnd.CheckStateChanged
+        If Me.selectedWP Is Nothing Then Exit Sub
+        Me.selectedWP.TurnEnd = ChWP_Rev.Checked
     End Sub
 
     Private Sub ChWP_Wait_CheckStateChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChWP_Wait.CheckStateChanged
@@ -533,6 +549,10 @@
     End Sub
 
     Private Sub ToolTip1_Popup(sender As Object, e As PopupEventArgs)
+
+    End Sub
+
+    Private Sub TBWP_Speed_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles TBWP_Speed.MaskInputRejected
 
     End Sub
 End Class

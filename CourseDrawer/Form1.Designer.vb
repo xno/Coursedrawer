@@ -53,13 +53,12 @@ Partial Class Form1
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TurnStart = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.butCalcAngleSel = New System.Windows.Forms.Button()
         Me.ChWP_Cross = New System.Windows.Forms.CheckBox()
         Me.ChWP_Wait = New System.Windows.Forms.CheckBox()
         Me.ChWP_Rev = New System.Windows.Forms.CheckBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ChWP_TurnStart = New System.Windows.Forms.CheckBox()
+        Me.ChWP_TurnEnd = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TBWP_Speed = New System.Windows.Forms.MaskedTextBox()
@@ -67,8 +66,7 @@ Partial Class Form1
         Me.TBWP_Y = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TBWP_X = New System.Windows.Forms.MaskedTextBox()
-        Me.ChWP_TurnStart = New System.Windows.Forms.CheckBox()
-        Me.ChWP_TurnEnd = New System.Windows.Forms.CheckBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.butSelectAll = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
@@ -320,13 +318,12 @@ Partial Class Form1
         'Panel2
         '
         Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.Controls.Add(Me.TurnStart)
-        Me.Panel2.Controls.Add(Me.CheckBox1)
         Me.Panel2.Controls.Add(Me.butCalcAngleSel)
         Me.Panel2.Controls.Add(Me.ChWP_Cross)
         Me.Panel2.Controls.Add(Me.ChWP_Wait)
         Me.Panel2.Controls.Add(Me.ChWP_Rev)
-        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.ChWP_TurnStart)
+        Me.Panel2.Controls.Add(Me.ChWP_TurnEnd)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.TBWP_Speed)
@@ -338,26 +335,6 @@ Partial Class Form1
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(157, 177)
         Me.Panel2.TabIndex = 4
-        '
-        'TurnStart
-        '
-        Me.TurnStart.AutoSize = True
-        Me.TurnStart.Location = New System.Drawing.Point(87, 158)
-        Me.TurnStart.Name = "TurnStart"
-        Me.TurnStart.Size = New System.Drawing.Size(70, 17)
-        Me.TurnStart.TabIndex = 5
-        Me.TurnStart.Text = "TurnStart"
-        Me.TurnStart.UseVisualStyleBackColor = True
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(87, 135)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(67, 17)
-        Me.CheckBox1.TabIndex = 4
-        Me.CheckBox1.Text = "TurnEnd"
-        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'butCalcAngleSel
         '
@@ -391,6 +368,7 @@ Partial Class Form1
         'ChWP_Rev
         '
         Me.ChWP_Rev.AutoSize = True
+        Me.ChWP_Rev.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChWP_Rev.Location = New System.Drawing.Point(6, 112)
         Me.ChWP_Rev.Name = "ChWP_Rev"
         Me.ChWP_Rev.Size = New System.Drawing.Size(66, 17)
@@ -398,14 +376,27 @@ Partial Class Form1
         Me.ChWP_Rev.Text = "Reverse"
         Me.ChWP_Rev.UseVisualStyleBackColor = True
         '
-        'Label4
+        'ChWP_TurnStart
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(3, 89)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(38, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Speed"
+        Me.ChWP_TurnStart.AutoSize = True
+        Me.ChWP_TurnStart.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChWP_TurnStart.Location = New System.Drawing.Point(87, 133)
+        Me.ChWP_TurnStart.Name = "ChWP_TurnStart"
+        Me.ChWP_TurnStart.Size = New System.Drawing.Size(70, 17)
+        Me.ChWP_TurnStart.TabIndex = 4
+        Me.ChWP_TurnStart.Text = "TurnStart"
+        Me.ChWP_TurnStart.UseVisualStyleBackColor = True
+        '
+        'ChWP_TurnEnd
+        '
+        Me.ChWP_TurnEnd.AutoSize = True
+        Me.ChWP_TurnEnd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChWP_TurnEnd.Location = New System.Drawing.Point(86, 156)
+        Me.ChWP_TurnEnd.Name = "ChWP_TurnEnd"
+        Me.ChWP_TurnEnd.Size = New System.Drawing.Size(67, 17)
+        Me.ChWP_TurnEnd.TabIndex = 4
+        Me.ChWP_TurnEnd.Text = "TurnEnd"
+        Me.ChWP_TurnEnd.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -474,19 +465,14 @@ Partial Class Form1
         Me.TBWP_X.TabIndex = 1
         Me.TBWP_X.Text = "0"
         '
-        'ChWP_TurnStart
+        'Label4
         '
-        Me.ChWP_TurnStart.Location = New System.Drawing.Point(0, 0)
-        Me.ChWP_TurnStart.Name = "ChWP_TurnStart"
-        Me.ChWP_TurnStart.Size = New System.Drawing.Size(104, 24)
-        Me.ChWP_TurnStart.TabIndex = 0
-        '
-        'ChWP_TurnEnd
-        '
-        Me.ChWP_TurnEnd.Location = New System.Drawing.Point(0, 0)
-        Me.ChWP_TurnEnd.Name = "ChWP_TurnEnd"
-        Me.ChWP_TurnEnd.Size = New System.Drawing.Size(104, 24)
-        Me.ChWP_TurnEnd.TabIndex = 0
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(3, 89)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(38, 13)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Speed"
         '
         'StatusStrip1
         '
@@ -647,9 +633,9 @@ Partial Class Form1
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents ChWP_Cross As System.Windows.Forms.CheckBox
     Friend WithEvents ChWP_Wait As System.Windows.Forms.CheckBox
+    Friend WithEvents ChWP_Rev As System.Windows.Forms.CheckBox
     Friend WithEvents ChWP_TurnStart As System.Windows.Forms.CheckBox
     Friend WithEvents ChWP_TurnEnd As System.Windows.Forms.CheckBox
-    Friend WithEvents ChWP_Rev As System.Windows.Forms.CheckBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents TBWP_Speed As System.Windows.Forms.MaskedTextBox
@@ -676,8 +662,6 @@ Partial Class Form1
     Friend WithEvents ToolStripTextBox1 As System.Windows.Forms.ToolStripTextBox
     Friend WithEvents butCrsUp As System.Windows.Forms.Button
     Friend WithEvents butCrsDown As System.Windows.Forms.Button
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents TurnStart As System.Windows.Forms.CheckBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
 
