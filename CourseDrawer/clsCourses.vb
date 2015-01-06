@@ -141,7 +141,7 @@ Public Class clsCourses
                                     End If
                             End Select
                         End While
-                        End If
+                    End If
             End Select
         Loop
         _courses.Sort(AddressOf SortCourses)

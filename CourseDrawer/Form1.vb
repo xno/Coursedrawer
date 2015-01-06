@@ -360,11 +360,11 @@
     End Sub
     Private Sub ChWP_TurnStart_CheckStateChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChWP_TurnStart.CheckStateChanged
         If Me.selectedWP Is Nothing Then Exit Sub
-        Me.selectedWP.TurnStart = ChWP_Rev.Checked
+        Me.selectedWP.TurnStart = ChWP_TurnStart.Checked
     End Sub
     Private Sub ChWP_TurnEnd_CheckStateChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChWP_TurnEnd.CheckStateChanged
         If Me.selectedWP Is Nothing Then Exit Sub
-        Me.selectedWP.TurnEnd = ChWP_Rev.Checked
+        Me.selectedWP.TurnEnd = ChWP_TurnEnd.Checked
     End Sub
 
     Private Sub ChWP_Wait_CheckStateChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChWP_Wait.CheckStateChanged

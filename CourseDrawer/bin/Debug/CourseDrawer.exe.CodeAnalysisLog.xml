@@ -12,7 +12,7 @@
          <Members>
           <Member Name="#SelectionChanged" Kind="Event" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2015-01-05 22:13:40Z" FixCategory="Breaking">
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2015-01-06 23:37:27Z" FixCategory="Breaking">
              <Issue Name="First" Certainty="95" Level="Error">Declare el primer parámetro de 'clsCourse.SelectionChangedEventHandler' como un objeto denominado 'sender'.</Issue>
              <Issue Name="Second" Certainty="95" Level="Error">Declare el segundo parámetro de 'clsCourse.SelectionChangedEventHandler' como EventArgs o una instancia de un tipo que extienda EventArgs, denominado 'e'.</Issue>
             </Message>
@@ -24,7 +24,7 @@
          <Members>
           <Member Name="#SelectionChanged" Kind="Event" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2015-01-05 22:13:40Z" FixCategory="Breaking">
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2015-01-06 23:37:27Z" FixCategory="Breaking">
              <Issue Name="First" Certainty="95" Level="Error">Declare el primer parámetro de 'clsWaypoint.SelectionChangedEventHandler' como un objeto denominado 'sender'.</Issue>
              <Issue Name="Second" Certainty="95" Level="Error">Declare el segundo parámetro de 'clsWaypoint.SelectionChangedEventHandler' como EventArgs o una instancia de un tipo que extienda EventArgs, denominado 'e'.</Issue>
             </Message>
@@ -36,7 +36,7 @@
          <Members>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message Id="myZoomCursor" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2015-01-05 22:13:40Z" FixCategory="NonBreaking">
+            <Message Id="myZoomCursor" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2015-01-06 23:37:27Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer" File="Form1.Designer.vb" Line="7">'Form1' contiene el campo 'Form1.myZoomCursor' que es de tipo IDisposable: 'Cursor'. Cambie el método Dispose en 'Form1' para que llame a Dispose o Close en este campo.</Issue>
             </Message>
            </Messages>
