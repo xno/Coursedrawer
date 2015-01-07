@@ -1,12 +1,22 @@
-CourseDrawer
-CoursePlay Path Editor
+
+***CourseDrawer_CoursePlay Path Editor***
 =================
-Actual Version: 4.0.002 
 
-***Madbros Commit exit ReadXML if no folders node in file***
+Developer version
+
+Please be aware you're using a developer version, which may and will contain errors, bugs, mistakes and unfinished code. Chances are you computer will explode when using it. Twice. If you have no idea what "beta", "alpha", or "developer" means and entails, steer clear. The team will not take any responsibility for crop destroyed or savegames deleted. You have been warned.
+
+If you're still ok with this, please remember to post possible issues that you find in the developer version. That's the only way we can find sources of error and fix them. Be as specific as possible.
 
 
-Adapted to CP v 4.01 by PromGames
+Credits
 
-Originally by Pawpouk and horoman
+    PromGames
+    Madbros
+  
 
+Former Developers
+
+    Satis
+    horoman
+    Original by Pawpouk
