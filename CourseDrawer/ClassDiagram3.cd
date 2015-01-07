@@ -1,2 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CourseDrawer.clsCourse">
+    <Position X="4.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IigEgAgYAiEAAIhAAAIIAEQACAAAAAAAAAAQQBAGhgA=</HashCode>
+      <FileName>clsCourse.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseDrawer.clsCourses">
+    <Position X="2.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACgE0AAIACAAAAIEAAIoIESAAABAAgQQAAAAAAIAhAA=</HashCode>
+      <FileName>clsCourses.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseDrawer.clsWaypoint">
+    <Position X="6.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>OAAAAgAQACEAAAgABAAAgAAjAAQCAIAABNCCUEABgBA=</HashCode>
+      <FileName>clsWaypoint.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseDrawer.clsFolders">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEEAAAAAAAAAABAAAAAAQQAAAAAAgQAAAAAIAAEAgA=</HashCode>
+      <FileName>clsFolders.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
