@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 12.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="12.0">
  <Targets>
-  <Target Name="C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\bin\Debug\CourseDrawer.exe">
+  <Target Name="C:\Users\Daniel\Documents\GitHub\Coursedrawer\CourseDrawer\bin\Debug\CourseDrawer.exe">
    <Modules>
     <Module Name="coursedrawer.exe">
      <Namespaces>
@@ -12,7 +12,7 @@
          <Members>
           <Member Name="#SelectionChanged" Kind="Event" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2015-01-08 17:08:37Z" FixCategory="Breaking">
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2015-01-08 21:12:54Z" FixCategory="Breaking">
              <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'clsCourse.SelectionChangedEventHandler' as an object named 'sender'.</Issue>
              <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'clsCourse.SelectionChangedEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
             </Message>
@@ -24,7 +24,7 @@
          <Members>
           <Member Name="#SelectionChanged" Kind="Event" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2015-01-08 17:08:37Z" FixCategory="Breaking">
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2015-01-08 21:12:54Z" FixCategory="Breaking">
              <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'clsWaypoint.SelectionChangedEventHandler' as an object named 'sender'.</Issue>
              <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'clsWaypoint.SelectionChangedEventHandler' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
             </Message>
@@ -36,8 +36,8 @@
          <Members>
           <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message Id="myZoomCursor" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2015-01-08 17:08:37Z" FixCategory="NonBreaking">
-             <Issue Certainty="75" Level="Warning" Path="C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer" File="Form1.Designer.vb" Line="7">'Form1' contains field 'Form1.myZoomCursor' that is of IDisposable type: 'Cursor'. Change the Dispose method on 'Form1' to call Dispose or Close on this field.</Issue>
+            <Message Id="myZoomCursor" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2015-01-08 21:12:54Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Daniel\Documents\GitHub\Coursedrawer\CourseDrawer" File="Form1.Designer.vb" Line="7">'Form1' contains field 'Form1.myZoomCursor' that is of IDisposable type: 'Cursor'. Change the Dispose method on 'Form1' to call Dispose or Close on this field.</Issue>
             </Message>
            </Messages>
           </Member>
