@@ -157,15 +157,30 @@
     ''' <remarks></remarks>
     Public Function getXML(ByVal id As Integer) As XElement
         Dim myNam As String = "waypoint" & id
+        Dim ConvSpeed As Double = Me.Speed
+        If ConvSpeed < 1 Then
+            ConvSpeed = ConvSpeed * 1000
+        End If
+
         Dim el As New XElement(myNam)
         el.Add(New XAttribute("pos", Me.Pos_X.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) & " " & Me.Pos_Y.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)))
         el.Add(New XAttribute("angle", Me.Angle.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)))
-        el.Add(New XAttribute("rev", Me.ReverseTxt))
-        el.Add(New XAttribute("wait", Me.WaitTxt))
-        el.Add(New XAttribute("turnstart", Me.TurnStartTxt))
-        el.Add(New XAttribute("turnend", Me.TurnEndTxt))
-        el.Add(New XAttribute("crossing", Me.CrossTxt))
-        el.Add(New XAttribute("speed", Me.Speed.ToString("0", System.Globalization.CultureInfo.InvariantCulture)))
+        If Me.Reverse Then
+            el.Add(New XAttribute("rev", Me.ReverseTxt))
+        End If
+        If Me.Wait Then
+            el.Add(New XAttribute("wait", Me.WaitTxt))
+        End If
+        If Me.TurnStartTxt Then
+            el.Add(New XAttribute("turnstart", Me.TurnStartTxt))
+        End If
+        If Me.TurnEnd Then
+            el.Add(New XAttribute("turnend", Me.TurnEndTxt))
+        End If
+        If Me.Cross Then
+            el.Add(New XAttribute("crossing", Me.CrossTxt))
+        End If
+        el.Add(New XAttribute("speed", ConvSpeed.ToString("0", System.Globalization.CultureInfo.InvariantCulture)))
         Return el
     End Function
     ''' <summary>
