@@ -297,27 +297,19 @@ Public Class clsCourses
     ''' <summary>
     ''' Save courses to XML file
     ''' </summary>
-    ''' <param name="fName">filename incl. full path</param>
+    ''' <param name="root">byref xelement node</param>
     ''' <remarks></remarks>
-    Public Sub SaveXML(ByVal fName As String)
-        Dim doc As XDocument
+    Public Sub SaveXML(ByRef root As XElement)
+
         Dim courses As XElement
-        Dim root As New XElement("XML")
-        doc = New XDocument(New XDeclaration("1.0", "utf-8", "no"))
 
         courses = New XElement("courses")
         For Each crs In _courses
             courses.Add(crs.getXML)
         Next
         root.Add(courses)
-        doc.Document.Add(root)
 
-        If System.IO.File.Exists(fName) = True Then
-            Dim backupName As String = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(fName), System.IO.Path.GetFileNameWithoutExtension(fName) & "_backup" & System.IO.Path.GetExtension(fName))
-            If System.IO.File.Exists(backupName) Then System.IO.File.Delete(backupName)
-            System.IO.File.Move(fName, backupName)
-        End If
-        doc.Save(fName)
+
 
     End Sub
     ''' <summary>

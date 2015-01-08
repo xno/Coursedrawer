@@ -93,4 +93,21 @@ Public Class clsFolders
         Return e1
     End Function
 
+
+    ''' <summary>
+    ''' Save folders to XML file
+    ''' </summary>
+    ''' <param name="root">byref xelement node</param>
+    ''' <remarks></remarks>
+    Public Sub SaveXML(ByRef root As XElement)
+
+        Dim folders As XElement
+
+        folders = New XElement("folders")
+        For Each folder In _folders
+            folders.Add(folder.getXML)
+        Next
+        root.Add(folders)
+
+    End Sub
 End Class

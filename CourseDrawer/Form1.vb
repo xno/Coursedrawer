@@ -408,6 +408,8 @@
     Private Sub butSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butSave.Click
         Dim lSaveDialog As New Windows.Forms.SaveFileDialog
         Dim filename As String
+        Dim doc As XDocument
+        Dim root As New XElement("XML")
 
         lSaveDialog.FileName = IO.Path.GetFileName(My.Settings("SavePath").ToString)
         lSaveDialog.InitialDirectory = IO.Path.GetDirectoryName(My.Settings("SavePath").ToString)
@@ -418,7 +420,24 @@
             Exit Sub
         End If
 
-        clsCourses.getInstance.SaveXML(filename)
+
+
+
+        doc = New XDocument(New XDeclaration("1.0", "utf-8", "no"))
+        clsCourses.getInstance.SaveXML(root)
+        clsFolders.getInstance.saveXML(root)
+        doc.Document.Add(root)
+
+
+        If System.IO.File.Exists(filename) = True Then
+            Dim backupName As String = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(filename), System.IO.Path.GetFileNameWithoutExtension(filename) & "_backup" & System.IO.Path.GetExtension(filename))
+            If System.IO.File.Exists(backupName) Then System.IO.File.Delete(backupName)
+            System.IO.File.Move(filename, backupName)
+        End If
+        doc.Save(filename)
+
+
+
         lSaveDialog = Nothing
     End Sub
     Private Sub selectedCourseChanged(ByRef crs As clsCourse)
