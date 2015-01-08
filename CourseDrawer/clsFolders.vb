@@ -107,7 +107,9 @@ Public Class clsFolders
         For Each folder In _folders
             folders.Add(folder.getXML)
         Next
-        root.Add(folders)
+        If _folders.Count > 0 Then
+            root.Add(folders)
+        End If
 
     End Sub
 End Class
