@@ -4,19 +4,19 @@
 ''' <remarks>Singleton class for wrapping folders</remarks>
 Public Class clsSettings
 
-    Public Property CPHposX As Double
-    Public Property CPHposY As Double
-    Public Property CPFautomaticScan As Boolean
-    Public Property CPFonlyScanOwnedFields As Boolean
-    Public Property CPFdebugScannedFields As Boolean
-    Public Property CPFdebugCustomLoadedFields As Boolean
-    Public Property CPFscanStep As String
-    Public Property CPWactive As Boolean
-    Public Property CPWwagePerHour As String
-    Public Property CPIshowName As Boolean
-    Public Property CPIshowCourse As Boolean
-    Public Property CPIactive As Boolean
-    Public Property CPMbatchWriteSize As String
+    Public Property CPHposX As Double = 0.4
+    Public Property CPHposY As Double = 0.002
+    Public Property CPFautomaticScan As Boolean = True
+    Public Property CPFonlyScanOwnedFields As Boolean = True
+    Public Property CPFdebugScannedFields As Boolean = False
+    Public Property CPFdebugCustomLoadedFields As Boolean = False
+    Public Property CPFscanStep As Integer = 5
+    Public Property CPWactive As Boolean = False
+    Public Property CPWwagePerHour As Integer = 10
+    Public Property CPIshowName As Boolean = True
+    Public Property CPIshowCourse As Boolean = True
+    Public Property CPIactive As Boolean = True
+    Public Property CPMbatchWriteSize As Integer = 4096
 
     Private Shared _instance As clsSettings
 
