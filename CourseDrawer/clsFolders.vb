@@ -28,7 +28,6 @@ Public Class clsFolders
         xmlDoc.Load(file)
         If xmlDoc Is Nothing Then Exit Sub
         xmlNode = xmlDoc.DocumentElement.SelectSingleNode("folders")
-        ''' madbros: exit if no folders node in file
         If xmlNode Is Nothing Then Exit Sub
         xmlNodeReader = New Xml.XmlNodeReader(xmlNode)
         Do While (xmlNodeReader.Read())
