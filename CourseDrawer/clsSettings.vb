@@ -3,24 +3,38 @@
 ''' </summary>
 ''' <remarks>Singleton class for wrapping folders</remarks>
 Public Class clsSettings
-    Dim CPF As Object
-    Dim CPH As Object
-    Dim CPW As Object
-    Dim CPI As Object
-    Dim CPM As Object
-    Public Property posX As String
-    Public Property posY As String
-    Public Property automaticScan As Boolean
-    Public Property onlyScanOwnedFields As Boolean
-    Public Property debugScannedFields As Boolean
-    Public Property debugCustomLoadedFields As Boolean
-    Public Property scanStep As String
-    Public Property active As Boolean
-    Public Property wagePerHour As String
-    Public Property showName As Boolean
-    Public Property showCourse As Boolean
-    Public Property batchWriteSize As String
 
+    Public Property CPHposX As Double
+    Public Property CPHposY As Double
+    Public Property CPFautomaticScan As Boolean
+    Public Property CPFonlyScanOwnedFields As Boolean
+    Public Property CPFdebugScannedFields As Boolean
+    Public Property CPFdebugCustomLoadedFields As Boolean
+    Public Property CPFscanStep As String
+    Public Property CPWactive As Boolean
+    Public Property CPWwagePerHour As String
+    Public Property CPIshowName As Boolean
+    Public Property CPIshowCourse As Boolean
+    Public Property CPIactive As Boolean
+    Public Property CPMbatchWriteSize As String
+
+    Private Shared _instance As clsSettings
+
+    Private Sub New()
+
+    End Sub
+    ''' <summary>
+    ''' Get instance of singleton class
+    ''' </summary>
+    ''' <param name="forceNew">force create new instance</param>
+    ''' <returns>Instance of courses collection</returns>
+    ''' <remarks></remarks>
+    Public Shared Function getInstance(Optional ByVal forceNew As Boolean = False) As clsSettings
+        If _instance Is Nothing Or forceNew = True Then
+            _instance = New clsSettings
+        End If
+        Return _instance
+    End Function
     ''' <summary>
     ''' Constructor
     ''' </summary>
@@ -32,63 +46,151 @@ Public Class clsSettings
         If file = String.Empty Then Exit Sub
         xmlDoc.Load(file)
         If xmlDoc Is Nothing Then Exit Sub
-        xmlNode = xmlDoc.DocumentElement.SelectSingleNode("courseplayHud")
+        xmlNode = xmlDoc.DocumentElement
+
+
         If xmlNode Is Nothing Then Exit Sub
         xmlNodeReader = New Xml.XmlNodeReader(xmlNode)
-        While xmlNodeReader.MoveToNextAttribute
-            Select Case xmlNodeReader.LocalName
-                Case "posX"
-                    Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, CPH.posX)
-                Case "posY"
-                    Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, CPH.posY)
-            End Select
-        End While
-        If xmlNodeReader.LocalName = "courseplayFields" Then
-            xmlNodeReader = New Xml.XmlNodeReader(xmlNode)
-            While xmlNodeReader.MoveToNextAttribute
-                Select Case xmlNodeReader.LocalName
-                    Case "automaticScan"
-                        CPF.automaticscan = xmlNodeReader.ReadElementContentAsBoolean
-                    Case "onlyScanOwnedFields"
-                        CPF.onlyScanOwnedFields = xmlNodeReader.ReadElementContentAsBoolean
-                    Case "debugScannedFields"
-                        CPF.debugScannedFields = xmlNodeReader.ReadElementContentAsBoolean
-                    Case "debugCustomLoadedFields"
-                        CPF.debugCustomLoadedFields = xmlNodeReader.ReadElementContentAsBoolean
-                    Case "scanStep"
-                        Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, CPF.scanStep)
-                End Select
-            End While
-        else If xmlNodeReader.LocalName = "courseplayWages" Then
-        xmlNodeReader = New Xml.XmlNodeReader(xmlNode)
-        While xmlNodeReader.MoveToNextAttribute
-            Select Case xmlNodeReader.LocalName
-                Case "active"
-                        CPW.active = xmlNodeReader.ReadElementContentAsBoolean
-                Case "wagePerHour"
-                    Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, CPW.wagePerHour)
-            End Select
-        End While
-        else If xmlNodeReader.LocalName = "courseplayIngameMap" Then
-        xmlNodeReader = New Xml.XmlNodeReader(xmlNode)
-        While xmlNodeReader.MoveToNextAttribute
-            Select Case xmlNodeReader.LocalName
-                Case "active"
-                        CPI.active = xmlNodeReader.ReadElementContentAsBoolean
-                    Case "showName"
-                        CPI.showName = xmlNodeReader.ReadElementContentAsBoolean
-                    Case "showCourse"
-                        CPI.showCourse = xmlNodeReader.ReadElementContentAsBoolean
-                End Select
-        End While
-            else If xmlNodeReader.LocalName = "courseManagement" Then
-        xmlNodeReader = New Xml.XmlNodeReader(xmlNode)
-        While xmlNodeReader.MoveToNextAttribute
-            Select Case xmlNodeReader.LocalName
-                Case "batchWriteSize"
-                    Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, CPM.batchWriteSize)
-            End Select
-        End While
-        End If
+
+
+        Do While (xmlNodeReader.Read())
+            If xmlNodeReader.LocalName = "courseplayHud" Then
+                While xmlNodeReader.MoveToNextAttribute
+                    Select Case xmlNodeReader.LocalName
+                        Case "posX"
+                            Double.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, CPHposX)
+                        Case "posY"
+                            Double.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, CPHposY)
+                    End Select
+                End While
+
+            ElseIf xmlNodeReader.LocalName = "courseplayFields" Then
+
+                While xmlNodeReader.MoveToNextAttribute
+                    Select Case xmlNodeReader.LocalName
+                        Case "automaticScan"
+                            If xmlNodeReader.Value = "true" Then
+                                CPFautomaticScan = True
+                            Else
+                                CPFautomaticScan = False
+                            End If
+                        Case "onlyScanOwnedFields"
+                            If xmlNodeReader.Value = "true" Then
+                                CPFonlyScanOwnedFields = True
+                            Else
+                                CPFonlyScanOwnedFields = False
+                            End If
+                        Case "debugScannedFields"
+                            If xmlNodeReader.Value = "true" Then
+                                CPFdebugScannedFields = True
+                            Else
+                                CPFdebugScannedFields = False
+                            End If
+                        Case "debugCustomLoadedFields"
+                            If xmlNodeReader.Value = "true" Then
+                                CPFdebugCustomLoadedFields = True
+                            Else
+                                CPFdebugCustomLoadedFields = False
+                            End If
+                        Case "scanStep"
+                            Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, CPFscanStep)
+                    End Select
+                End While
+            ElseIf xmlNodeReader.LocalName = "courseplayWages" Then
+
+                While xmlNodeReader.MoveToNextAttribute
+                    Select Case xmlNodeReader.LocalName
+                        Case "active"
+                            If xmlNodeReader.Value = "true" Then
+                                CPWactive = True
+                            Else
+                                CPWactive = False
+                            End If
+                        Case "wagePerHour"
+                            Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, CPWwagePerHour)
+                    End Select
+                End While
+            ElseIf xmlNodeReader.LocalName = "courseplayIngameMap" Then
+
+                While xmlNodeReader.MoveToNextAttribute
+                    Select Case xmlNodeReader.LocalName
+                        Case "active"
+                            If xmlNodeReader.Value = "true" Then
+                                CPIactive = True
+                            Else
+                                CPIactive = False
+                            End If
+                        Case "showName"
+                            If xmlNodeReader.Value = "true" Then
+                                CPIshowName = True
+                            Else
+                                CPIshowName = False
+                            End If
+                        Case "showCourse"
+                            If xmlNodeReader.Value = "true" Then
+                                CPIshowCourse = True
+                            Else
+                                CPIshowCourse = False
+                            End If
+                    End Select
+                End While
+            ElseIf xmlNodeReader.LocalName = "courseManagement" Then
+
+                While xmlNodeReader.MoveToNextAttribute
+                    Select Case xmlNodeReader.LocalName
+                        Case "batchWriteSize"
+                            Integer.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, CPMbatchWriteSize)
+                    End Select
+                End While
+            End If
+
+            Loop
+
+    End Sub
+
+
+ 
+
+
+    ''' <summary>
+    ''' Save folders to XML file
+    ''' </summary>
+    ''' <param name="root">byref xelement node</param>
+    ''' <remarks></remarks>
+    Public Sub SaveXML(ByRef root As XElement)
+
+        Dim e1 As XElement
+        e1 = New XElement("courseplayHud")
+
+
+        e1.Add(New XAttribute("posX", CPHposX.ToString("0.000000", System.Globalization.CultureInfo.InvariantCulture)))
+        e1.Add(New XAttribute("posY", CPHposY.ToString("0.000000", System.Globalization.CultureInfo.InvariantCulture)))
+        root.Add(e1)
+
+        e1 = New XElement("courseplayFields")
+        e1.Add(New XAttribute("automaticScan", CPFautomaticScan))
+        e1.Add(New XAttribute("debugCustomLoadedFields", CPFdebugCustomLoadedFields))
+        e1.Add(New XAttribute("debugScannedFields", CPFdebugScannedFields))
+        e1.Add(New XAttribute("onlyScanOwnedFields", CPFonlyScanOwnedFields))
+        e1.Add(New XAttribute("scanStep", CPFscanStep))
+        root.Add(e1)
+
+        e1 = New XElement("courseplayWages")
+        e1.Add(New XAttribute("active", CPWactive))
+        e1.Add(New XAttribute("wagePerHour", CPWwagePerHour))
+        root.Add(e1)
+
+        e1 = New XElement("courseplayIngameMap")
+        e1.Add(New XAttribute("active", CPIactive))
+        e1.Add(New XAttribute("showCourse", CPIshowCourse))
+        e1.Add(New XAttribute("showName", CPIshowName))
+        root.Add(e1)
+
+        e1 = New XElement("courseManagement")
+        e1.Add(New XAttribute("batchWriteSize", CPMbatchWriteSize))
+        root.Add(e1)
+
+
+
     End Sub
 End Class

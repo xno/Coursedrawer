@@ -202,7 +202,7 @@
         Me.fillCourseList()
         clsFolders.getInstance(True).ReadXML(filename)
         Me.fillFolderList()
-
+        clsSettings.getInstance(True).ReadXML(filename)
     End Sub
 
     Private Sub fillCourseList()
@@ -424,8 +424,10 @@
 
 
         doc = New XDocument(New XDeclaration("1.0", "utf-8", "no"))
+        clsSettings.getInstance.SaveXML(root)
         clsCourses.getInstance.SaveXML(root)
-        clsFolders.getInstance.saveXML(root)
+        clsFolders.getInstance.SaveXML(root)
+
         doc.Document.Add(root)
 
 
@@ -572,6 +574,10 @@
     End Sub
 
     Private Sub TBWP_Speed_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles TBWP_Speed.MaskInputRejected
+
+    End Sub
+
+    Private Sub TBCrs_Name_TextChanged(sender As Object, e As EventArgs) Handles TBCrs_Name.TextChanged
 
     End Sub
 End Class
