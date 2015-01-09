@@ -139,6 +139,18 @@ Public Class clsCourses
                                     Else
                                         waypoint.Reverse = False
                                     End If
+                                Case "generated"
+                                    If xmlNodeReader.Value = "True" Then
+                                        waypoint.generated = True
+                                    Else
+                                        waypoint.generated = False
+                                    End If
+                                Case "ridgemarker"
+                                    Double.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, waypoint.ridgemarker)
+                                Case "dir"
+                                    waypoint.dir = xmlNodeReader.Value
+                                Case "turn"
+                                    waypoint.turn = xmlNodeReader.Value
                             End Select
                         End While
                     End If
