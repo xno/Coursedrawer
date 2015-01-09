@@ -95,7 +95,7 @@
             If _generated = True Then
                 Return "true"
             Else
-                Return "false"
+                Return ""
             End If
         End Get
     End Property
