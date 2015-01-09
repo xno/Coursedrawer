@@ -79,6 +79,7 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.butCrsUp = New System.Windows.Forms.Button()
         Me.butCrsDown = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.ToolStrip1.SuspendLayout()
         Me.panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -285,7 +286,7 @@ Partial Class Form1
         Me.panel1.AutoScroll = True
         Me.panel1.Controls.Add(Me.PictureBox1)
         Me.panel1.Location = New System.Drawing.Point(0, 52)
-        Me.panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.panel1.Name = "panel1"
         Me.panel1.Size = New System.Drawing.Size(1077, 585)
         Me.panel1.TabIndex = 2
@@ -294,7 +295,7 @@ Partial Class Form1
         '
         Me.PictureBox1.BackColor = System.Drawing.SystemColors.ControlDark
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(2731, 2521)
         Me.PictureBox1.TabIndex = 0
@@ -313,7 +314,7 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CheckedListBox1.FormattingEnabled = True
         Me.CheckedListBox1.Location = New System.Drawing.Point(1085, 53)
-        Me.CheckedListBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CheckedListBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckedListBox1.Name = "CheckedListBox1"
         Me.CheckedListBox1.Size = New System.Drawing.Size(208, 191)
         Me.CheckedListBox1.TabIndex = 3
@@ -335,7 +336,7 @@ Partial Class Form1
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.TBWP_X)
         Me.Panel2.Location = New System.Drawing.Point(1085, 414)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(209, 218)
         Me.Panel2.TabIndex = 4
@@ -343,7 +344,7 @@ Partial Class Form1
         'butCalcAngleSel
         '
         Me.butCalcAngleSel.Location = New System.Drawing.Point(8, 187)
-        Me.butCalcAngleSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.butCalcAngleSel.Margin = New System.Windows.Forms.Padding(4)
         Me.butCalcAngleSel.Name = "butCalcAngleSel"
         Me.butCalcAngleSel.Size = New System.Drawing.Size(100, 28)
         Me.butCalcAngleSel.TabIndex = 4
@@ -354,7 +355,7 @@ Partial Class Form1
         '
         Me.ChWP_Cross.AutoSize = True
         Me.ChWP_Cross.Location = New System.Drawing.Point(8, 166)
-        Me.ChWP_Cross.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ChWP_Cross.Margin = New System.Windows.Forms.Padding(4)
         Me.ChWP_Cross.Name = "ChWP_Cross"
         Me.ChWP_Cross.Size = New System.Drawing.Size(85, 21)
         Me.ChWP_Cross.TabIndex = 3
@@ -365,7 +366,7 @@ Partial Class Form1
         '
         Me.ChWP_Wait.AutoSize = True
         Me.ChWP_Wait.Location = New System.Drawing.Point(116, 138)
-        Me.ChWP_Wait.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ChWP_Wait.Margin = New System.Windows.Forms.Padding(4)
         Me.ChWP_Wait.Name = "ChWP_Wait"
         Me.ChWP_Wait.Size = New System.Drawing.Size(58, 21)
         Me.ChWP_Wait.TabIndex = 3
@@ -377,7 +378,7 @@ Partial Class Form1
         Me.ChWP_Rev.AutoSize = True
         Me.ChWP_Rev.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChWP_Rev.Location = New System.Drawing.Point(8, 138)
-        Me.ChWP_Rev.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ChWP_Rev.Margin = New System.Windows.Forms.Padding(4)
         Me.ChWP_Rev.Name = "ChWP_Rev"
         Me.ChWP_Rev.Size = New System.Drawing.Size(83, 21)
         Me.ChWP_Rev.TabIndex = 3
@@ -389,7 +390,7 @@ Partial Class Form1
         Me.ChWP_TurnStart.AutoSize = True
         Me.ChWP_TurnStart.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChWP_TurnStart.Location = New System.Drawing.Point(116, 164)
-        Me.ChWP_TurnStart.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ChWP_TurnStart.Margin = New System.Windows.Forms.Padding(4)
         Me.ChWP_TurnStart.Name = "ChWP_TurnStart"
         Me.ChWP_TurnStart.Size = New System.Drawing.Size(90, 21)
         Me.ChWP_TurnStart.TabIndex = 4
@@ -401,7 +402,7 @@ Partial Class Form1
         Me.ChWP_TurnEnd.AutoSize = True
         Me.ChWP_TurnEnd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChWP_TurnEnd.Location = New System.Drawing.Point(115, 192)
-        Me.ChWP_TurnEnd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ChWP_TurnEnd.Margin = New System.Windows.Forms.Padding(4)
         Me.ChWP_TurnEnd.Name = "ChWP_TurnEnd"
         Me.ChWP_TurnEnd.Size = New System.Drawing.Size(85, 21)
         Me.ChWP_TurnEnd.TabIndex = 4
@@ -433,7 +434,7 @@ Partial Class Form1
         Me.TBWP_Speed.BeepOnError = True
         Me.TBWP_Speed.Culture = New System.Globalization.CultureInfo("")
         Me.TBWP_Speed.Location = New System.Drawing.Point(56, 106)
-        Me.TBWP_Speed.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBWP_Speed.Margin = New System.Windows.Forms.Padding(4)
         Me.TBWP_Speed.Name = "TBWP_Speed"
         Me.TBWP_Speed.Size = New System.Drawing.Size(148, 22)
         Me.TBWP_Speed.TabIndex = 1
@@ -444,7 +445,7 @@ Partial Class Form1
         Me.TBWP_Angle.BeepOnError = True
         Me.TBWP_Angle.Culture = New System.Globalization.CultureInfo("")
         Me.TBWP_Angle.Location = New System.Drawing.Point(56, 74)
-        Me.TBWP_Angle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBWP_Angle.Margin = New System.Windows.Forms.Padding(4)
         Me.TBWP_Angle.Name = "TBWP_Angle"
         Me.TBWP_Angle.Size = New System.Drawing.Size(148, 22)
         Me.TBWP_Angle.TabIndex = 1
@@ -455,7 +456,7 @@ Partial Class Form1
         Me.TBWP_Y.BeepOnError = True
         Me.TBWP_Y.Culture = New System.Globalization.CultureInfo("")
         Me.TBWP_Y.Location = New System.Drawing.Point(56, 42)
-        Me.TBWP_Y.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBWP_Y.Margin = New System.Windows.Forms.Padding(4)
         Me.TBWP_Y.Name = "TBWP_Y"
         Me.TBWP_Y.Size = New System.Drawing.Size(148, 22)
         Me.TBWP_Y.TabIndex = 1
@@ -476,7 +477,7 @@ Partial Class Form1
         Me.TBWP_X.BeepOnError = True
         Me.TBWP_X.Culture = New System.Globalization.CultureInfo("")
         Me.TBWP_X.Location = New System.Drawing.Point(56, 10)
-        Me.TBWP_X.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBWP_X.Margin = New System.Windows.Forms.Padding(4)
         Me.TBWP_X.Name = "TBWP_X"
         Me.TBWP_X.Size = New System.Drawing.Size(148, 22)
         Me.TBWP_X.TabIndex = 1
@@ -503,8 +504,8 @@ Partial Class Form1
         'butSelectAll
         '
         Me.butSelectAll.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.butSelectAll.Location = New System.Drawing.Point(1085, 268)
-        Me.butSelectAll.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.butSelectAll.Location = New System.Drawing.Point(1085, 249)
+        Me.butSelectAll.Margin = New System.Windows.Forms.Padding(4)
         Me.butSelectAll.Name = "butSelectAll"
         Me.butSelectAll.Size = New System.Drawing.Size(96, 28)
         Me.butSelectAll.TabIndex = 6
@@ -518,31 +519,32 @@ Partial Class Form1
         'Panel3
         '
         Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.Controls.Add(Me.ComboBox1)
         Me.Panel3.Controls.Add(Me.TextBox1)
         Me.Panel3.Controls.Add(Me.TBCrs_Name)
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.TBCrs_ID)
         Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Location = New System.Drawing.Point(1085, 304)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Location = New System.Drawing.Point(1085, 286)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(209, 102)
+        Me.Panel3.Size = New System.Drawing.Size(209, 120)
         Me.Panel3.TabIndex = 7
         '
         'TextBox1
         '
         Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(56, 70)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox1.Location = New System.Drawing.Point(56, 66)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(148, 22)
         Me.TextBox1.TabIndex = 5
         '
         'TBCrs_Name
         '
-        Me.TBCrs_Name.Location = New System.Drawing.Point(56, 38)
-        Me.TBCrs_Name.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBCrs_Name.Location = New System.Drawing.Point(56, 36)
+        Me.TBCrs_Name.Margin = New System.Windows.Forms.Padding(4)
         Me.TBCrs_Name.Name = "TBCrs_Name"
         Me.TBCrs_Name.Size = New System.Drawing.Size(148, 22)
         Me.TBCrs_Name.TabIndex = 3
@@ -550,7 +552,7 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(3, 74)
+        Me.Label7.Location = New System.Drawing.Point(3, 70)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(48, 17)
@@ -560,7 +562,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(3, 42)
+        Me.Label6.Location = New System.Drawing.Point(3, 40)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(45, 17)
@@ -571,7 +573,7 @@ Partial Class Form1
         '
         Me.TBCrs_ID.Enabled = False
         Me.TBCrs_ID.Location = New System.Drawing.Point(55, 6)
-        Me.TBCrs_ID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TBCrs_ID.Margin = New System.Windows.Forms.Padding(4)
         Me.TBCrs_ID.Name = "TBCrs_ID"
         Me.TBCrs_ID.Size = New System.Drawing.Size(148, 22)
         Me.TBCrs_ID.TabIndex = 1
@@ -590,8 +592,8 @@ Partial Class Form1
         'butCrsUp
         '
         Me.butCrsUp.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.butCrsUp.Location = New System.Drawing.Point(1209, 268)
-        Me.butCrsUp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.butCrsUp.Location = New System.Drawing.Point(1209, 250)
+        Me.butCrsUp.Margin = New System.Windows.Forms.Padding(4)
         Me.butCrsUp.Name = "butCrsUp"
         Me.butCrsUp.Size = New System.Drawing.Size(39, 28)
         Me.butCrsUp.TabIndex = 8
@@ -601,13 +603,22 @@ Partial Class Form1
         'butCrsDown
         '
         Me.butCrsDown.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.butCrsDown.Location = New System.Drawing.Point(1256, 268)
-        Me.butCrsDown.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.butCrsDown.Location = New System.Drawing.Point(1256, 250)
+        Me.butCrsDown.Margin = New System.Windows.Forms.Padding(4)
         Me.butCrsDown.Name = "butCrsDown"
         Me.butCrsDown.Size = New System.Drawing.Size(39, 28)
         Me.butCrsDown.TabIndex = 9
         Me.butCrsDown.Text = "Dn"
         Me.butCrsDown.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"aa", "bb"})
+        Me.ComboBox1.Location = New System.Drawing.Point(56, 96)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 24)
+        Me.ComboBox1.TabIndex = 6
         '
         'Form1
         '
@@ -624,7 +635,7 @@ Partial Class Form1
         Me.Controls.Add(Me.panel1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Text = "Courseplay Edit"
         Me.ToolStrip1.ResumeLayout(False)
@@ -694,5 +705,6 @@ Partial Class Form1
     Friend WithEvents butCrsDown As System.Windows.Forms.Button
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
 
 End Class

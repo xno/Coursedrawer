@@ -217,6 +217,7 @@
         Dim crsList As Dictionary(Of String, Boolean)
         crsList = clsFolders.getInstance.FolderList
         For Each pair As KeyValuePair(Of String, Boolean) In crsList
+            ComboBox1.Items.Add(pair.Key)
         Next
     End Sub
 
@@ -454,6 +455,7 @@
             TBCrs_Name.Enabled = True
             TBCrs_ID.Text = crs.id.ToString
             TBCrs_Name.Text = crs.Name
+            TextBox1.Text = crs.parent
             If CheckedListBox1.Items.Count >= crs.id Then
                 If CheckedListBox1.SelectedIndex <> crs.id - 1 Then
                     CheckedListBox1.SelectedIndex = crs.id - 1
