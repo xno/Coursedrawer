@@ -40,9 +40,9 @@
     Public Property TurnStart As Boolean
     Public Property TurnEnd As Boolean
     Public Property Speed As Double
-    Public Property generated As Boolean
-    Public Property turn As String
-    Public Property dir As String
+    Public Property generated As String = ""
+    Public Property turn As String = ""
+    Public Property dir As String = ""
     Public Property ridgemarker As Double
     Public Property isSelected As Boolean
     Public ReadOnly Property ReverseTxt As String
@@ -99,11 +99,7 @@
             End If
         End Get
     End Property
-    Public Sub New(ByVal dir As String, ByVal turn As String)
-        Me.New()
-        Me.dir = dir
-        Me.turn = turn
-    End Sub
+
     ''' <summary>
     ''' Constructor
     ''' </summary>
@@ -198,13 +194,20 @@
         If Me.Cross Then
             el.Add(New XAttribute("crossing", Me.CrossTxt))
         End If
-        If Me.generated Then
+        If Me.generated <> "" Then
             el.Add(New XAttribute("generated", Me.generatedTXT))
         End If
+        If Me.ridgemarker > 0 Then
+            el.Add(New XAttribute("ridgemarker", ridgemarker.ToString("0", System.Globalization.CultureInfo.InvariantCulture)))
+        End If
+        If Me.turn <> "" Then
+            el.Add(New XAttribute("turn", Me.turn))
+        End If
+        If Me.dir <> "" Then
+            el.Add(New XAttribute("dir", Me.dir))
+        End If
         el.Add(New XAttribute("speed", ConvSpeed.ToString("0", System.Globalization.CultureInfo.InvariantCulture)))
-        el.Add(New XAttribute("ridgemarker", ridgemarker.ToString("0", System.Globalization.CultureInfo.InvariantCulture)))
-        el.Add(New XAttribute("dir", Me.dir))
-        el.Add(New XAttribute("turn", Me.turn))
+
         Return el
     End Function
     ''' <summary>

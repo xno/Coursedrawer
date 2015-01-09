@@ -107,9 +107,9 @@ Public Class clsCourses
                                     Double.TryParse(xmlNodeReader.Value, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, waypoint.Speed)
                                 Case "turnend"
                                     If xmlNodeReader.Value = "1" Then
-                                        waypoint.Cross = True
+                                        waypoint.TurnEnd = True
                                     Else
-                                        waypoint.Cross = False
+                                        waypoint.TurnEnd = False
                                     End If
                                 Case "pos"
                                     stringA = xmlNodeReader.Value.Split(" "c)
@@ -123,9 +123,9 @@ Public Class clsCourses
                                     End If
                                 Case "turnstart"
                                     If xmlNodeReader.Value = "1" Then
-                                        waypoint.Cross = True
+                                        waypoint.TurnStart = True
                                     Else
-                                        waypoint.Cross = False
+                                        waypoint.TurnStart = False
                                     End If
                                 Case "wait"
                                     If xmlNodeReader.Value = "1" Then
