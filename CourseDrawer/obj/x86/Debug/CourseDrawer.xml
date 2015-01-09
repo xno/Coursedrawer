@@ -20,10 +20,23 @@ CourseDrawer
 	<param name="sender"></param>
 	<param name="e"></param>
 	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsSettings.getInstance(System.Boolean)">
+	<summary>
+ Get instance of singleton class
+ </summary>
+	<param name="forceNew">force create new instance</param>
+	<returns>Instance of courses collection</returns>
+	<remarks></remarks>
 </member><member name="M:CourseDrawer.clsSettings.ReadXML(System.String)">
 	<summary>
  Constructor
  </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsSettings.SaveXML(System.Xml.Linq.XElement@)">
+	<summary>
+ Save folders to XML file
+ </summary>
+	<param name="root">byref xelement node</param>
 	<remarks></remarks>
 </member><member name="T:CourseDrawer.clsSettings">
 	<summary>

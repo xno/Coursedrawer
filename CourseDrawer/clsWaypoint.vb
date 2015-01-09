@@ -99,6 +99,11 @@
             End If
         End Get
     End Property
+    Public Sub New(ByVal dir As String, ByVal turn As String)
+        Me.New()
+        Me.dir = dir
+        Me.turn = turn
+    End Sub
     ''' <summary>
     ''' Constructor
     ''' </summary>
