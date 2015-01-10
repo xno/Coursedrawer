@@ -1,6 +1,6 @@
 ﻿Public Class Form1
     Const zoomStep As Integer = 50
-    Dim zoomLvl As Integer = 100
+    Dim zoomLvl As Integer = 50
     Dim myMousePos As Point
     Dim myLocation As PointF
     Dim selectedWP As clsWaypoint
@@ -26,13 +26,16 @@
         Else
             Exit Sub
         End If
-        zoomLvl = 100
+        zoomLvl = 50
         Me.PictureBox1.SizeMode = PictureBoxSizeMode.AutoSize
         Me.PictureBox1.Load(filename)
         Me.PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         Me.panel1.AutoScrollPosition = New Point(0, 0)
         clsWaypoint.mapSize = Me.PictureBox1.Image.Size
     End Sub
+
+
+
     ''' <summary>
     ''' Do things                                                                             
     ''' </summary>
@@ -73,22 +76,26 @@
 
         ElseIf butZoom.Checked = True Then
             If PictureBox1.Image Is Nothing Then
-                locSize = New Size(2048, 2048)
+                locSize = New Size(4096, 4096)
             Else
                 locSize = PictureBox1.Image.Size
             End If
 
             'Picture size (zoom)
             If ev.Button = Windows.Forms.MouseButtons.Left Then
-                If zoomLvl < 1000 Then
+                If zoomLvl < 2000 Then
                     zoomLvl += zoomStep
+                Else
+                    MsgBox("max level reached")
                 End If
             ElseIf ev.Button = Windows.Forms.MouseButtons.Right Then
                 If zoomLvl > zoomStep Then
                     zoomLvl -= zoomStep
+                Else
+                    MsgBox("min level reached")
                 End If
             ElseIf ev.Button = Windows.Forms.MouseButtons.Middle Then
-                zoomLvl = 100
+                zoomLvl = 50
             End If
             locSize.Width = locSize.Width * zoomLvl / 100
             locSize.Height = locSize.Height * zoomLvl / 100
@@ -455,12 +462,12 @@
             TBCrs_Name.Enabled = True
             TBCrs_ID.Text = crs.id.ToString
             TBCrs_Name.Text = crs.Name
-            TextBox1.Text = crs.parent
             If CheckedListBox1.Items.Count >= crs.id Then
                 If CheckedListBox1.SelectedIndex <> crs.id - 1 Then
                     CheckedListBox1.SelectedIndex = crs.id - 1
                 End If
             End If
+            ComboBox1.SelectedIndex = crs.parent
         End If
         selectedCrs = crs
     End Sub
@@ -580,6 +587,10 @@
     End Sub
 
     Private Sub TBCrs_Name_TextChanged(sender As Object, e As EventArgs) Handles TBCrs_Name.TextChanged
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
 
     End Sub
 End Class

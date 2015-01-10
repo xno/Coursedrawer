@@ -66,12 +66,11 @@ Partial Class Form1
         Me.TBWP_Y = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TBWP_X = New System.Windows.Forms.MaskedTextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.butSelectAll = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TBCrs_Name = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -79,7 +78,7 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.butCrsUp = New System.Windows.Forms.Button()
         Me.butCrsDown = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
         Me.panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -322,6 +321,7 @@ Partial Class Form1
         'Panel2
         '
         Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.butCalcAngleSel)
         Me.Panel2.Controls.Add(Me.ChWP_Cross)
         Me.Panel2.Controls.Add(Me.ChWP_Wait)
@@ -483,15 +483,6 @@ Partial Class Form1
         Me.TBWP_X.TabIndex = 1
         Me.TBWP_X.Text = "0"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(3, 89)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(38, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Speed"
-        '
         'StatusStrip1
         '
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 640)
@@ -520,7 +511,6 @@ Partial Class Form1
         '
         Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.Controls.Add(Me.ComboBox1)
-        Me.Panel3.Controls.Add(Me.TextBox1)
         Me.Panel3.Controls.Add(Me.TBCrs_Name)
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Controls.Add(Me.Label6)
@@ -532,14 +522,15 @@ Partial Class Form1
         Me.Panel3.Size = New System.Drawing.Size(209, 120)
         Me.Panel3.TabIndex = 7
         '
-        'TextBox1
+        'ComboBox1
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(56, 66)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(148, 22)
-        Me.TextBox1.TabIndex = 5
+        Me.ComboBox1.Enabled = False
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"*Root*"})
+        Me.ComboBox1.Location = New System.Drawing.Point(53, 65)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(151, 24)
+        Me.ComboBox1.TabIndex = 6
         '
         'TBCrs_Name
         '
@@ -611,14 +602,15 @@ Partial Class Form1
         Me.butCrsDown.Text = "Dn"
         Me.butCrsDown.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'Label4
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"aa", "bb"})
-        Me.ComboBox1.Location = New System.Drawing.Point(56, 96)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBox1.TabIndex = 6
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(4, 109)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(49, 17)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Speed"
         '
         'Form1
         '
@@ -677,7 +669,6 @@ Partial Class Form1
     Friend WithEvents ChWP_Rev As System.Windows.Forms.CheckBox
     Friend WithEvents ChWP_TurnStart As System.Windows.Forms.CheckBox
     Friend WithEvents ChWP_TurnEnd As System.Windows.Forms.CheckBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents TBWP_Speed As System.Windows.Forms.MaskedTextBox
     Friend WithEvents TBWP_Angle As System.Windows.Forms.MaskedTextBox
@@ -703,8 +694,8 @@ Partial Class Form1
     Friend WithEvents ToolStripTextBox1 As System.Windows.Forms.ToolStripTextBox
     Friend WithEvents butCrsUp As System.Windows.Forms.Button
     Friend WithEvents butCrsDown As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 
 End Class
