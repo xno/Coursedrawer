@@ -287,11 +287,11 @@
     Public Sub initWPforNewCourse(ByVal Point As PointF)
         Dim wp As New clsWaypoint
         wp.setNewPos(Point)
-        wp.Wait = True
+        wp.Cross = True
         _waypoints.Add(wp)
         wp = New clsWaypoint
         wp.setNewPos(New PointF(Point.X + 10, Point.Y + 10))
-        wp.Wait = True
+        wp.Cross = True
         _waypoints.Add(wp)
         wp.forceSelect()
         wp = Nothing

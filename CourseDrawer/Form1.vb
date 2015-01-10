@@ -83,7 +83,7 @@
 
             'Picture size (zoom)
             If ev.Button = Windows.Forms.MouseButtons.Left Then
-                If zoomLvl < 2000 Then
+                If zoomLvl < 4000 Then
                     zoomLvl += zoomStep
                 Else
                     MsgBox("max level reached")
