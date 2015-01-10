@@ -238,6 +238,7 @@
 
         Dim ms As New System.IO.MemoryStream(My.Resources.magnify)
         myZoomCursor = New Cursor(ms)
+        Me.Text = "CoursePlay Edit " & Me.ProductVersion
         ms.Dispose()
 
     End Sub

@@ -104,6 +104,7 @@ Partial Class Form1
         Me.butSaveGame.Name = "butSaveGame"
         Me.butSaveGame.Size = New System.Drawing.Size(36, 36)
         Me.butSaveGame.Text = "Savegame"
+        Me.butSaveGame.ToolTipText = "Load XML"
         '
         'butLoadBGImage
         '
@@ -113,6 +114,7 @@ Partial Class Form1
         Me.butLoadBGImage.Name = "butLoadBGImage"
         Me.butLoadBGImage.Size = New System.Drawing.Size(36, 36)
         Me.butLoadBGImage.Text = "Map"
+        Me.butLoadBGImage.ToolTipText = "Load bitmap Map"
         '
         'butSave
         '
@@ -122,6 +124,7 @@ Partial Class Form1
         Me.butSave.Name = "butSave"
         Me.butSave.Size = New System.Drawing.Size(36, 36)
         Me.butSave.Text = "Save"
+        Me.butSave.ToolTipText = "Save XML"
         '
         'ToolStripSeparator1
         '
@@ -140,6 +143,7 @@ Partial Class Form1
         Me.butMove.Name = "butMove"
         Me.butMove.Size = New System.Drawing.Size(36, 36)
         Me.butMove.Text = "Move"
+        Me.butMove.ToolTipText = "Move map"
         '
         'butZoom
         '
@@ -150,6 +154,7 @@ Partial Class Form1
         Me.butZoom.Name = "butZoom"
         Me.butZoom.Size = New System.Drawing.Size(36, 36)
         Me.butZoom.Text = "Zoom"
+        Me.butZoom.ToolTipText = "Zoom map"
         '
         'butSelect
         '
@@ -160,6 +165,7 @@ Partial Class Form1
         Me.butSelect.Name = "butSelect"
         Me.butSelect.Size = New System.Drawing.Size(36, 36)
         Me.butSelect.Text = "Select"
+        Me.butSelect.ToolTipText = "Select Waypoint"
         '
         'ToolStripSeparator2
         '
@@ -176,6 +182,7 @@ Partial Class Form1
         Me.butAppendNode.Name = "butAppendNode"
         Me.butAppendNode.Size = New System.Drawing.Size(36, 36)
         Me.butAppendNode.Text = "Add"
+        Me.butAppendNode.ToolTipText = "Append waypoint"
         '
         'butInsertNode
         '
@@ -186,6 +193,7 @@ Partial Class Form1
         Me.butInsertNode.Name = "butInsertNode"
         Me.butInsertNode.Size = New System.Drawing.Size(36, 36)
         Me.butInsertNode.Text = "Insert"
+        Me.butInsertNode.ToolTipText = "Insert waypoint"
         '
         'butDeleteNode
         '
@@ -196,6 +204,7 @@ Partial Class Form1
         Me.butDeleteNode.Name = "butDeleteNode"
         Me.butDeleteNode.Size = New System.Drawing.Size(36, 36)
         Me.butDeleteNode.Text = "Delete"
+        Me.butDeleteNode.ToolTipText = "Delete waypoint"
         '
         'sButFillNodes
         '
@@ -207,23 +216,24 @@ Partial Class Form1
         Me.sButFillNodes.Name = "sButFillNodes"
         Me.sButFillNodes.Size = New System.Drawing.Size(48, 36)
         Me.sButFillNodes.Text = "Fill Nodes"
+        Me.sButFillNodes.ToolTipText = "Fill Nodes between actual and previous waypoint"
         '
         'Distance5ToolStripMenuItem
         '
         Me.Distance5ToolStripMenuItem.Name = "Distance5ToolStripMenuItem"
-        Me.Distance5ToolStripMenuItem.Size = New System.Drawing.Size(155, 24)
+        Me.Distance5ToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
         Me.Distance5ToolStripMenuItem.Text = "Distance 5"
         '
         'Distance10ToolStripMenuItem
         '
         Me.Distance10ToolStripMenuItem.Name = "Distance10ToolStripMenuItem"
-        Me.Distance10ToolStripMenuItem.Size = New System.Drawing.Size(155, 24)
+        Me.Distance10ToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
         Me.Distance10ToolStripMenuItem.Text = "Distance 10"
         '
         'Distance20ToolStripMenuItem
         '
         Me.Distance20ToolStripMenuItem.Name = "Distance20ToolStripMenuItem"
-        Me.Distance20ToolStripMenuItem.Size = New System.Drawing.Size(155, 24)
+        Me.Distance20ToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
         Me.Distance20ToolStripMenuItem.Text = "Distance 20"
         '
         'ToolStripSeparator3
@@ -276,6 +286,7 @@ Partial Class Form1
         Me.butRecalcAngleCrs.Name = "butRecalcAngleCrs"
         Me.butRecalcAngleCrs.Size = New System.Drawing.Size(36, 36)
         Me.butRecalcAngleCrs.Text = "Recalc directions"
+        Me.butRecalcAngleCrs.ToolTipText = "Recalc selected course directions"
         '
         'panel1
         '
