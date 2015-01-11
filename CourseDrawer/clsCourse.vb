@@ -252,6 +252,11 @@
     ''' <remarks></remarks>
     Public Sub appendWP()
         Me._waypoints.Add(Me._waypoints(Me._waypoints.Count - 1).Clone)
+        _waypoints(_selectedWP).isSelected = False
+        _selectedWP = Me._waypoints.Count - 1
+        _waypoints(_selectedWP - 1).Cross = False
+        _waypoints(_selectedWP).Cross = True
+        _waypoints(_selectedWP).isSelected = True
     End Sub
     ''' <summary>
     ''' Destructor

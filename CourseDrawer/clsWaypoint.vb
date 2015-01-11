@@ -233,7 +233,9 @@
         wp.Speed = Me.Speed
         'wp.Wait = Me.Wait
         wp.Reverse = Me.Reverse
-        wp.Cross = Me.Cross
+        Me.isSelected = False
+        wp.isSelected = True
+        'wp.Cross = Me.Cross
         'Here is where we have to introduce the conditional. Is this related to the append waypoint
         Return wp
     End Function
