@@ -150,7 +150,9 @@ Public Class clsCourses
                                 Case "dir"
                                     waypoint.dir = xmlNodeReader.Value
                                 Case "turn"
-                                    waypoint.turn = xmlNodeReader.Value
+                                    If xmlNodeReader.Value <> "false" Then
+                                        waypoint.turn = xmlNodeReader.Value
+                                    End If
                             End Select
                         End While
                     End If
