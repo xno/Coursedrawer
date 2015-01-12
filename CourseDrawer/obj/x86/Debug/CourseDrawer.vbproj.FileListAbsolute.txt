@@ -30,3 +30,4 @@ C:\Users\Daniel\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseD
 C:\Users\Daniel\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.vbproj.GenerateResource.Cache
 C:\Users\Daniel\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.exe.manifest
 C:\Users\Daniel\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.application
+C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.vbprojResolveAssemblyReference.cache

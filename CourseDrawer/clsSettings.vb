@@ -4,8 +4,8 @@
 ''' <remarks>Singleton class for wrapping folders</remarks>
 Public Class clsSettings
 
-    Public Property CPHposX As Double = 0.4
-    Public Property CPHposY As Double = 0.002
+    Public Property CPHposX As Double = 0.472291
+    Public Property CPHposY As Double = 0.007407
     Public Property CPFautomaticScan As Boolean = True
     Public Property CPFonlyScanOwnedFields As Boolean = True
     Public Property CPFdebugScannedFields As Boolean = False
