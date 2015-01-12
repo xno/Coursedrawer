@@ -194,15 +194,13 @@
         If Me.Cross Then
             el.Add(New XAttribute("crossing", Me.CrossTxt))
         End If
-        If Me.generated <> "" Then
-        ElseIf Me.generated <> "false" Then
+        If Me.generated = "true" Then
             el.Add(New XAttribute("generated", Me.generatedTXT))
         End If
         If Me.ridgemarker > 0 Then
             el.Add(New XAttribute("ridgemarker", ridgemarker.ToString("0", System.Globalization.CultureInfo.InvariantCulture)))
         End If
-        If Me.turn <> "" Then
-        ElseIf Me.turn <> "false" Then
+        If Me.turn <> "false" Then
             el.Add(New XAttribute("turn", Me.turn))
         End If
         If Me.dir <> "" Then
