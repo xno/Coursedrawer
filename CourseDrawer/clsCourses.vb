@@ -333,7 +333,10 @@ Public Class clsCourses
         Dim crs As New clsCourse("course " & _courses.Count + 1, _courses.Count + 1)
         crs.initWPforNewCourse(point)
         _courses.Add(crs)
+        'aqui habria que seleccionar ese course recien añadido, pero no lo consigo
+
     End Sub
+
     ''' <summary>
     ''' Calculate angles(directions) for selected waypoint
     ''' </summary>

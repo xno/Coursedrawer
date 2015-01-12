@@ -86,13 +86,13 @@
                 If zoomLvl < 4000 Then
                     zoomLvl += zoomStep
                 Else
-                    MsgBox("max level reached")
+                    'MsgBox("max level reached")
                 End If
             ElseIf ev.Button = Windows.Forms.MouseButtons.Right Then
                 If zoomLvl > zoomStep Then
                     zoomLvl -= zoomStep
                 Else
-                    MsgBox("min level reached")
+                    'MsgBox("min level reached")
                 End If
             ElseIf ev.Button = Windows.Forms.MouseButtons.Middle Then
                 zoomLvl = 50
