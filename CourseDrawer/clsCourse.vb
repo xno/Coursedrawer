@@ -242,8 +242,11 @@
     ''' </summary>
     ''' <remarks></remarks>
     Public Sub insertBeforeWP()
+        Dim idx As Integer = Me._selectedWP
         If Me._selectedWP >= 0 Then
             Me._waypoints.Insert(_selectedWP, Me._waypoints(Me._selectedWP).Clone)
+            clsWaypoint.forceUnselect()
+            _waypoints(idx).forceSelect()
         End If
     End Sub
     ''' <summary>
@@ -252,11 +255,10 @@
     ''' <remarks></remarks>
     Public Sub appendWP()
         Me._waypoints.Add(Me._waypoints(Me._waypoints.Count - 1).Clone)
-        _waypoints(_selectedWP).isSelected = False
-        _selectedWP = Me._waypoints.Count - 1
+        clsWaypoint.forceUnselect()
+        _waypoints(Me._waypoints.Count - 1).forceSelect()
         _waypoints(_selectedWP - 1).Cross = False
         _waypoints(_selectedWP).Cross = True
-        _waypoints(_selectedWP).isSelected = True
     End Sub
     ''' <summary>
     ''' Destructor
@@ -291,6 +293,7 @@
     ''' <remarks></remarks>
     Public Sub initWPforNewCourse(ByVal Point As PointF)
         Dim wp As New clsWaypoint
+        clsWaypoint.forceUnselect()
         wp.setNewPos(Point)
         wp.Cross = True
         _waypoints.Add(wp)
@@ -300,7 +303,6 @@
         _waypoints.Add(wp)
         wp.forceSelect()
         wp = Nothing
-        RaiseEvent SelectionChanged(Me)
     End Sub
     ''' <summary>
     ''' Force unselect course
