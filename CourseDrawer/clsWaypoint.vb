@@ -40,9 +40,9 @@
     Public Property TurnStart As Boolean
     Public Property TurnEnd As Boolean
     Public Property Speed As Double
-    Public Property generated As String = ""
-    Public Property turn As String = ""
-    Public Property dir As String = ""
+    Public Property generated As String
+    Public Property turn As String
+    Public Property dir As String
     Public Property ridgemarker As Double
     Public Property isSelected As Boolean
     Public ReadOnly Property ReverseTxt As String
@@ -200,7 +200,7 @@
         If Me.ridgemarker > 0 Then
             el.Add(New XAttribute("ridgemarker", ridgemarker.ToString("0", System.Globalization.CultureInfo.InvariantCulture)))
         End If
-        If Me.turn <> "false" Then
+        If Me.turn <> "" Then
             el.Add(New XAttribute("turn", Me.turn))
         End If
         If Me.dir <> "" Then
