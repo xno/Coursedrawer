@@ -204,6 +204,7 @@ Public Class clsCourses
     Public Sub selectWP(ByVal id As Integer)
         If id > 0 And id <= _courses.Count Then
             _courses(id - 1).selectWP(1)
+            Me._seledtedCrs = _courses.IndexOf(_courses(id - 1))
         End If
     End Sub
     ''' <summary>
@@ -335,8 +336,7 @@ Public Class clsCourses
         Dim crs As New clsCourse("course " & _courses.Count + 1, _courses.Count + 1)
         crs.initWPforNewCourse(point)
         _courses.Add(crs)
-        'aqui habria que seleccionar ese course recien añadido, pero no lo consigo
-
+        Me._seledtedCrs = _courses.Count - 1
     End Sub
 
     ''' <summary>

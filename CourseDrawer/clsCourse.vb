@@ -233,8 +233,16 @@
     ''' </summary>
     ''' <remarks></remarks>
     Public Sub deleteSelectedWP()
+        Dim idx As Integer = Me._selectedWP
         If Me._selectedWP >= 0 Then
             Me._waypoints.RemoveAt(Me._selectedWP)
+            If idx > _waypoints.Count - 1 Then
+                _waypoints(_waypoints.Count - 1).forceSelect()
+            End If
+            _waypoints(Me._selectedWP).forceSelect()
+            'por si acaso era el primero o el ultimo, ponemos el primer y ultimo wp cross a true (para que preguntar)
+            _waypoints(0).Cross = True
+            _waypoints(_waypoints.Count - 1).Cross = True
         End If
     End Sub
     ''' <summary>
@@ -247,6 +255,10 @@
             Me._waypoints.Insert(_selectedWP, Me._waypoints(Me._selectedWP).Clone)
             clsWaypoint.forceUnselect()
             _waypoints(idx).forceSelect()
+            If idx = 0 Then
+                _waypoints(idx + 1).Cross = False
+                _waypoints(idx).Cross = True
+            End If
         End If
     End Sub
     ''' <summary>

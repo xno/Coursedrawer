@@ -52,6 +52,8 @@
         If butNewCourse.Checked = True Then
             clsCourses.getInstance.addCourse(origPoint)
 
+            'clsCourses.getInstance.selectwp.lastwp
+
             Dim crsList As Dictionary(Of String, Boolean)
             crsList = clsCourses.getInstance.CourseList
             Me.CheckedListBox1.Items.Clear()
@@ -476,6 +478,9 @@
             ComboBox1.SelectedIndex = crs.parent
         End If
         selectedCrs = crs
+
+        'selectedCrs.selectWP(selectedCrs.WPCount)
+        'selsectedwp = 
     End Sub
 
     Private Sub TBCrs_Name_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TBCrs_Name.Leave
