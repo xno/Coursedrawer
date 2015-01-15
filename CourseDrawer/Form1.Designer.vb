@@ -53,6 +53,7 @@ Partial Class Form1
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.butCalcAngleSel = New System.Windows.Forms.Button()
         Me.ChWP_Cross = New System.Windows.Forms.CheckBox()
         Me.ChWP_Wait = New System.Windows.Forms.CheckBox()
@@ -78,11 +79,13 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.butCrsUp = New System.Windows.Forms.Button()
         Me.butCrsDown = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
         Me.ToolStrip1.SuspendLayout()
         Me.panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -221,19 +224,19 @@ Partial Class Form1
         'Distance5ToolStripMenuItem
         '
         Me.Distance5ToolStripMenuItem.Name = "Distance5ToolStripMenuItem"
-        Me.Distance5ToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
+        Me.Distance5ToolStripMenuItem.Size = New System.Drawing.Size(155, 24)
         Me.Distance5ToolStripMenuItem.Text = "Distance 5"
         '
         'Distance10ToolStripMenuItem
         '
         Me.Distance10ToolStripMenuItem.Name = "Distance10ToolStripMenuItem"
-        Me.Distance10ToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
+        Me.Distance10ToolStripMenuItem.Size = New System.Drawing.Size(155, 24)
         Me.Distance10ToolStripMenuItem.Text = "Distance 10"
         '
         'Distance20ToolStripMenuItem
         '
         Me.Distance20ToolStripMenuItem.Name = "Distance20ToolStripMenuItem"
-        Me.Distance20ToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
+        Me.Distance20ToolStripMenuItem.Size = New System.Drawing.Size(155, 24)
         Me.Distance20ToolStripMenuItem.Text = "Distance 20"
         '
         'ToolStripSeparator3
@@ -351,6 +354,16 @@ Partial Class Form1
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(209, 218)
         Me.Panel2.TabIndex = 4
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(4, 109)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(49, 17)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Speed"
         '
         'butCalcAngleSel
         '
@@ -496,10 +509,11 @@ Partial Class Form1
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 640)
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripProgressBar1})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 637)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(1308, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1308, 25)
         Me.StatusStrip1.TabIndex = 5
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -613,15 +627,16 @@ Partial Class Form1
         Me.butCrsDown.Text = "Dn"
         Me.butCrsDown.UseVisualStyleBackColor = True
         '
-        'Label4
+        'ToolStripStatusLabel1
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(4, 109)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 17)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Speed"
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(154, 20)
+        Me.ToolStripStatusLabel1.Text = "ToolStripStatusLabel1"
+        '
+        'ToolStripProgressBar1
+        '
+        Me.ToolStripProgressBar1.Name = "ToolStripProgressBar1"
+        Me.ToolStripProgressBar1.Size = New System.Drawing.Size(100, 19)
         '
         'Form1
         '
@@ -647,6 +662,8 @@ Partial Class Form1
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
@@ -708,5 +725,7 @@ Partial Class Form1
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents ToolStripProgressBar1 As System.Windows.Forms.ToolStripProgressBar
 
 End Class

@@ -6,19 +6,55 @@ CourseDrawer
 </name>
 </assembly>
 <members>
-<member name="M:CourseDrawer.Form1.butLoad_Click(System.Object,System.EventArgs)">
+<member name="M:CourseDrawer.main.getWorlCoordinates(System.Int64,System.Int64,System.Int32)">
 	<summary>
- Loads bitmap as background
+ Get true world coordinates (abstracting from zoom)
  </summary>
-	<param name="sender"></param>
-	<param name="e"></param>
+	<param name="X"></param>
+	<param name="Y"></param>
+	<param name="zoomLevel"></param>
+	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:CourseDrawer.Form1.PictureBox1_Click(System.Object,System.EventArgs)">
+</member><member name="M:CourseDrawer.main.getWorlCoordinates(System.Drawing.Point,System.Int32)">
 	<summary>
- Do things                                                                             
+ Get true world coordinates (abstracting from zoom)
  </summary>
-	<param name="sender"></param>
-	<param name="e"></param>
+	<param name="point"></param>
+	<param name="zoomLevel"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.main.getWorlCoordinates(System.Drawing.PointF,System.Int32)">
+	<summary>
+ Get true world coordinates (abstracting from zoom)
+ </summary>
+	<param name="point"></param>
+	<param name="zoomLevel"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.main.getDrawCoordinates(System.Int64,System.Int64,System.Int32)">
+	<summary>
+ Get draw coordinates from world coordinates (zoom)
+ </summary>
+	<param name="X"></param>
+	<param name="Y"></param>
+	<param name="zoomLevel"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.main.getDrawCoordinates(System.Drawing.Point,System.Int32)">
+	<summary>
+ Get draw coordinates from world coordinates (zoom)
+ </summary>
+	<param name="point"></param>
+	<param name="zoomLevel"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.main.getDrawCoordinates(System.Drawing.PointF,System.Int32)">
+	<summary>
+ Get draw coordinates from world coordinates (zoom)
+ </summary>
+	<param name="point"></param>
+	<param name="zoomLevel"></param>
+	<returns></returns>
 	<remarks></remarks>
 </member><member name="M:CourseDrawer.clsSettings.getInstance(System.Boolean)">
 	<summary>
@@ -97,6 +133,147 @@ CourseDrawer
 	<summary>
  Force unselect
  </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.#ctor">
+	<summary>
+ Constructor
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.#ctor(System.String,System.Int32)">
+	<summary>
+ Constructor
+ </summary>
+	<param name="Name">Course name</param>
+	<param name="id">Course ID</param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.addWaypoint(CourseDrawer.clsWaypoint)">
+	<summary>
+ Append waypoint to course
+ </summary>
+	<param name="waypoint"></param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.insertWaypoint(CourseDrawer.clsWaypoint,System.Int32)">
+	<summary>
+ Insert waypoint before
+ </summary>
+	<param name="waypoint"></param>
+	<param name="before"></param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.fillBeforeSelected(System.Int32)">
+	<summary>
+ Fill waypoints between selected and previous waypoint
+ </summary>
+	<param name="range"></param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.draw(System.Drawing.Graphics@,System.Int32)">
+	<summary>
+ Draw waypoints
+ </summary>
+	<param name="graphic"></param>
+	<param name="zoomLvl"></param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.selectWP(System.Drawing.PointF)">
+	<summary>
+ Select waypoint at point
+ </summary>
+	<param name="point"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.selectWP(System.Int32)">
+	<summary>
+ Select waypoint by ID
+ </summary>
+	<param name="id"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.selectionChangedHandler(CourseDrawer.clsWaypoint@)">
+	<summary>
+ Set selected waypoint if selection changed
+ </summary>
+	<param name="wp"></param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.selectedCourseChanged(CourseDrawer.clsCourse@)">
+	<summary>
+ Set isSelected attribute if selection changed
+ </summary>
+	<param name="crs"></param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.deleteSelectedWP">
+	<summary>
+ Delete selected waypoint
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.insertBeforeWP">
+	<summary>
+ Insert waypoint before
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.appendWP">
+	<summary>
+ Append waypoint
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.Finalize">
+	<summary>
+ Destructor
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.getXML">
+	<summary>
+ Create XML of course
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.initWPforNewCourse(System.Drawing.PointF)">
+	<summary>
+ Initial waypoints for new course
+ </summary>
+	<param name="Point"></param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.forceUnselect">
+	<summary>
+ Force unselect course
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.calculateAngleAllWP">
+	<summary>
+ Calculate angle(direction) for all waypoints
+ </summary>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.calculateAngle(System.Int32)">
+	<summary>
+ Calculate angle(direction) for waypoint with ID
+ </summary>
+	<param name="idx"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.calculateAngleSelWP">
+	<summary>
+ Calculate angle(direction) for selected waypoint
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.clsCourse.getDirection(System.Drawing.PointF,System.Drawing.PointF)">
+	<summary>
+ Get direction between two points
+ </summary>
+	<param name="pt1"></param>
+	<param name="pt2"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.Form1.butLoad_Click(System.Object,System.EventArgs)">
+	<summary>
+ Loads bitmap as background
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:CourseDrawer.Form1.PictureBox1_Click(System.Object,System.EventArgs)">
+	<summary>
+ Do things                                                                             
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
 	<remarks></remarks>
 </member><member name="M:CourseDrawer.clsCourses.#ctor">
 	<summary>
@@ -240,163 +417,6 @@ CourseDrawer
  Class for collection of courses
  </summary>
 	<remarks>Singleton class for wrapping courses</remarks>
-</member><member name="M:CourseDrawer.clsCourse.#ctor">
-	<summary>
- Constructor
- </summary>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.#ctor(System.String,System.Int32)">
-	<summary>
- Constructor
- </summary>
-	<param name="Name">Course name</param>
-	<param name="id">Course ID</param>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.addWaypoint(CourseDrawer.clsWaypoint)">
-	<summary>
- Append waypoint to course
- </summary>
-	<param name="waypoint"></param>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.insertWaypoint(CourseDrawer.clsWaypoint,System.Int32)">
-	<summary>
- Insert waypoint before
- </summary>
-	<param name="waypoint"></param>
-	<param name="before"></param>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.fillBeforeSelected(System.Int32)">
-	<summary>
- Fill waypoints between selected and previous waypoint
- </summary>
-	<param name="range"></param>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.draw(System.Drawing.Graphics@,System.Int32)">
-	<summary>
- Draw waypoints
- </summary>
-	<param name="graphic"></param>
-	<param name="zoomLvl"></param>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.selectWP(System.Drawing.PointF)">
-	<summary>
- Select waypoint at point
- </summary>
-	<param name="point"></param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.selectWP(System.Int32)">
-	<summary>
- Select waypoint by ID
- </summary>
-	<param name="id"></param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.selectionChangedHandler(CourseDrawer.clsWaypoint@)">
-	<summary>
- Set selected waypoint if selection changed
- </summary>
-	<param name="wp"></param>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.selectedCourseChanged(CourseDrawer.clsCourse@)">
-	<summary>
- Set isSelected attribute if selection changed
- </summary>
-	<param name="crs"></param>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.deleteSelectedWP">
-	<summary>
- Delete selected waypoint
- </summary>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.insertBeforeWP">
-	<summary>
- Insert waypoint before
- </summary>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.appendWP">
-	<summary>
- Append waypoint
- </summary>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.Finalize">
-	<summary>
- Destructor
- </summary>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.getXML">
-	<summary>
- Create XML of course
- </summary>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.initWPforNewCourse(System.Drawing.PointF)">
-	<summary>
- Initial waypoints for new course
- </summary>
-	<param name="Point"></param>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.forceUnselect">
-	<summary>
- Force unselect course
- </summary>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.calculateAngleAllWP">
-	<summary>
- Calculate angle(direction) for all waypoints
- </summary>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.calculateAngle(System.Int32)">
-	<summary>
- Calculate angle(direction) for waypoint with ID
- </summary>
-	<param name="idx"></param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.calculateAngleSelWP">
-	<summary>
- Calculate angle(direction) for selected waypoint
- </summary>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsCourse.getDirection(System.Drawing.PointF,System.Drawing.PointF)">
-	<summary>
- Get direction between two points
- </summary>
-	<param name="pt1"></param>
-	<param name="pt2"></param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsFolders.ReadXML(System.String)">
-	<summary>
- Constructor
- </summary>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsFolders.getInstance(System.Boolean)">
-	<summary>
- Get instance of singleton class
- </summary>
-	<param name="forceNew">force create new instance</param>
-	<returns>Instance of courses collection</returns>
-	<remarks></remarks>
-</member><member name="P:CourseDrawer.clsFolders.FolderList">
-	<summary>
- Get list of course name and hidden attribute
- </summary>
-	<value></value>
-	<returns>Dictionary of course names and hidden attribute</returns>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.clsFolders.SaveXML(System.Xml.Linq.XElement@)">
-	<summary>
- Save folders to XML file
- </summary>
-	<param name="root">byref xelement node</param>
-	<remarks></remarks>
-</member><member name="T:CourseDrawer.clsFolders">
-	<summary>
- Class for collection of folders
- </summary>
-	<remarks>Singleton class for wrapping folders</remarks>
 </member><member name="P:CourseDrawer.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
@@ -470,56 +490,36 @@ CourseDrawer
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
-</member><member name="M:CourseDrawer.main.getWorlCoordinates(System.Int64,System.Int64,System.Int32)">
+</member><member name="M:CourseDrawer.clsFolders.ReadXML(System.String)">
 	<summary>
- Get true world coordinates (abstracting from zoom)
+ Constructor
  </summary>
-	<param name="X"></param>
-	<param name="Y"></param>
-	<param name="zoomLevel"></param>
-	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:CourseDrawer.main.getWorlCoordinates(System.Drawing.Point,System.Int32)">
+</member><member name="M:CourseDrawer.clsFolders.getInstance(System.Boolean)">
 	<summary>
- Get true world coordinates (abstracting from zoom)
+ Get instance of singleton class
  </summary>
-	<param name="point"></param>
-	<param name="zoomLevel"></param>
-	<returns></returns>
+	<param name="forceNew">force create new instance</param>
+	<returns>Instance of courses collection</returns>
 	<remarks></remarks>
-</member><member name="M:CourseDrawer.main.getWorlCoordinates(System.Drawing.PointF,System.Int32)">
+</member><member name="P:CourseDrawer.clsFolders.FolderList">
 	<summary>
- Get true world coordinates (abstracting from zoom)
+ Get list of course name and hidden attribute
  </summary>
-	<param name="point"></param>
-	<param name="zoomLevel"></param>
-	<returns></returns>
+	<value></value>
+	<returns>Dictionary of course names and hidden attribute</returns>
 	<remarks></remarks>
-</member><member name="M:CourseDrawer.main.getDrawCoordinates(System.Int64,System.Int64,System.Int32)">
+</member><member name="M:CourseDrawer.clsFolders.SaveXML(System.Xml.Linq.XElement@)">
 	<summary>
- Get draw coordinates from world coordinates (zoom)
+ Save folders to XML file
  </summary>
-	<param name="X"></param>
-	<param name="Y"></param>
-	<param name="zoomLevel"></param>
-	<returns></returns>
+	<param name="root">byref xelement node</param>
 	<remarks></remarks>
-</member><member name="M:CourseDrawer.main.getDrawCoordinates(System.Drawing.Point,System.Int32)">
+</member><member name="T:CourseDrawer.clsFolders">
 	<summary>
- Get draw coordinates from world coordinates (zoom)
+ Class for collection of folders
  </summary>
-	<param name="point"></param>
-	<param name="zoomLevel"></param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:CourseDrawer.main.getDrawCoordinates(System.Drawing.PointF,System.Int32)">
-	<summary>
- Get draw coordinates from world coordinates (zoom)
- </summary>
-	<param name="point"></param>
-	<param name="zoomLevel"></param>
-	<returns></returns>
-	<remarks></remarks>
+	<remarks>Singleton class for wrapping folders</remarks>
 </member>
 </members>
 </doc>

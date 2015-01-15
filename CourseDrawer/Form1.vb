@@ -58,6 +58,8 @@
             For Each pair As KeyValuePair(Of String, Boolean) In crsList
                 Me.CheckedListBox1.Items.Add(pair.Key, pair.Value)
             Next
+            Me.doListChange = True
+            Me.CheckedListBox1.SelectedIndex = Me.CheckedListBox1.Items.Count - 1
 
             Me.butSave.Enabled = True
             Me.butAppendNode.Enabled = True
@@ -204,12 +206,15 @@
         Else
             Exit Sub
         End If
-
+        Me.Cursor = Cursors.WaitCursor
+        ToolStripStatusLabel1.Text = "Loading..."
         clsCourses.getInstance(True).ReadXML(filename)
         Me.fillCourseList()
         clsFolders.getInstance(True).ReadXML(filename)
         Me.fillFolderList()
         clsSettings.getInstance(True).ReadXML(filename)
+        Me.Cursor = Cursors.Default
+        ToolStripStatusLabel1.Text = ""
     End Sub
 
     Private Sub fillCourseList()
@@ -592,6 +597,10 @@
     End Sub
 
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub butZoom_Click(sender As Object, e As EventArgs) Handles butZoom.Click
 
     End Sub
 End Class
