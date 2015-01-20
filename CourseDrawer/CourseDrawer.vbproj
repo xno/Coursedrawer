@@ -17,7 +17,7 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Alfredol\Documents\GitHub\Coursedrawer\CourseDrawer\Publish\</PublishUrl>
+    <PublishUrl>C:\Users\Daniel\Documents\GitHub\Coursedrawer\CourseDrawer\Publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -30,8 +30,9 @@
     <ProductName>Course Drawer fro CoursePlay</ProductName>
     <PublisherName>PromGames</PublisherName>
     <SuiteName>FS15 CourseDrawer 4.0</SuiteName>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>4.0.005.%2a</ApplicationVersion>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>4.1.000.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>

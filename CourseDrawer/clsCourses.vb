@@ -334,9 +334,9 @@ Public Class clsCourses
     ''' <param name="point">Starting point</param>
     ''' <remarks></remarks>
     Public Sub addCourse(ByVal point As PointF)
-        Dim crs As New clsCourse("course " & _courses.Count + 1, _courses.Count + 1)
         'Attention, new course ID must be lastcourse+1 instead count + 1
-        Dim lastcourse = _courses(_courses.Count - 1).id
+        Dim lastcourse As Integer
+        If _courses.Count = 0 Then lastcourse = 0 Else lastcourse = _courses(_courses.Count - 1).id
         Dim crs As New clsCourse("course " & lastcourse + 1, lastcourse + 1)
         crs.initWPforNewCourse(point)
         _courses.Add(crs)
