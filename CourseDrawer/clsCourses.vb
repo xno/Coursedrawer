@@ -279,9 +279,10 @@ Public Class clsCourses
     ''' </summary>
     ''' <remarks></remarks>
     Private Sub RecalcCoursesID()
-        For idx = 1 To _courses.Count
-            _courses(idx - 1).id = idx
-        Next
+        'Commented to avoid courses Id recalculation
+        'For idx = 1 To _courses.Count
+        '    _courses(idx - 1).id = idx
+        'Next
     End Sub
     ''' <summary>
     ''' Insert waypoint before selected WP in selected course
@@ -334,6 +335,9 @@ Public Class clsCourses
     ''' <remarks></remarks>
     Public Sub addCourse(ByVal point As PointF)
         Dim crs As New clsCourse("course " & _courses.Count + 1, _courses.Count + 1)
+        'Attention, new course ID must be lastcourse+1 instead count + 1
+        Dim lastcourse = _courses(_courses.Count - 1).id
+        Dim crs As New clsCourse("course " & lastcourse + 1, lastcourse + 1)
         crs.initWPforNewCourse(point)
         _courses.Add(crs)
         Me._seledtedCrs = _courses.Count - 1
