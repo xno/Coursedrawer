@@ -4,7 +4,7 @@
 
 External tool to draw and edit Courseplay courses directly to the XML File 
 
-  `CourseDrawer.exe` application has been updated and prepared for working with the new version of CoursePLay 4.0 (FS2015)
+[CourseDrawer!](http://courseplaypatheditor.github.io/CourseDrawerWeb/res/CourseDrawer_4_0_6.zip) is an application that has been updated and prepared for working with the new version of CoursePLay 4.0 (FS2015)
 
 Please be aware you're using a developer version, which may and will contain errors, bugs, mistakes and unfinished code. Chances are you computer will explode when using it. Twice. If you have no idea what "beta", "alpha", or "developer" means and entails, steer clear. The team will not take any responsibility for crop destroyed or savegames deleted. You have been warned.
 
