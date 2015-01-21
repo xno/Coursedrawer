@@ -31,3 +31,6 @@ C:\Users\Daniel\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseD
 C:\Users\Daniel\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.exe.manifest
 C:\Users\Daniel\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.application
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.vbprojResolveAssemblyReference.cache
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\bin\Debug\CourseDrawer.exe.config
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.xml
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\obj\x86\Debug\CourseDrawer.pdb
