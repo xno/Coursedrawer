@@ -14,3 +14,17 @@ D:\Users\PPml\documents\visual studio 2010\Projects\CourseDrawer\CourseDrawer\bi
 D:\Users\PPml\documents\visual studio 2010\Projects\CourseDrawer\CourseDrawer\bin\Release\CourseDrawer.application
 D:\Users\PPml\documents\visual studio 2010\Projects\CourseDrawer\CourseDrawer\obj\x86\Release\CourseDrawer.exe.manifest
 D:\Users\PPml\documents\visual studio 2010\Projects\CourseDrawer\CourseDrawer\obj\x86\Release\CourseDrawer.application
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\bin\Release\CourseDrawer.exe.config
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.xml
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\bin\Release\CourseDrawer.exe.manifest
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\bin\Release\CourseDrawer.application
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\bin\Release\CourseDrawer.exe
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\bin\Release\CourseDrawer.pdb
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\bin\Release\CourseDrawer.xml
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.Form1.resources
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.Resources.resources
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.vbproj.GenerateResource.Cache
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.exe.manifest
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.application
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.exe
+C:\Users\koma\Source\Repos\komaflash\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.pdb
