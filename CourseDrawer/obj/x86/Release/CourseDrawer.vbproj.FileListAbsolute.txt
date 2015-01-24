@@ -38,7 +38,6 @@ C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\bin\Release\CourseDr
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\bin\Release\CourseDrawer.pdb
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\bin\Release\CourseDrawer.xml
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\bin\Release\DevIL.NET2.dll
-C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.vbprojResolveAssemblyReference.cache
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.Form1.resources
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.Resources.resources
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.vbproj.GenerateResource.Cache

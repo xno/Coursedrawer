@@ -7,14 +7,14 @@
     <framework targetVersion="4.5.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="CourseDrawer.exe.manifest" size="6978">
+    <dependentAssembly dependencyType="install" codebase="CourseDrawer.exe.manifest" size="6581">
       <assemblyIdentity name="CourseDrawer.exe" version="4.1.000.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>v2TLcxRGutamyWZME0IvOOPgf0Ji2MmzZ0xDiMik+mQ=</dsig:DigestValue>
+        <dsig:DigestValue>ubEQDj2V/IQ+Lewjkbg8g0D/5P/C8lJjDw1ZdmbWwWw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

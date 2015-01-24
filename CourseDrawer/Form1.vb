@@ -17,18 +17,20 @@
     ''' <remarks></remarks>
     Private Sub butLoad_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butLoadBGImage.Click
         Dim filename As String
+        Dim mapdds As System.Drawing.Bitmap
         OpenFileDialog1.FileName = IO.Path.GetFileName(My.Settings("MapPath").ToString)
         OpenFileDialog1.InitialDirectory = IO.Path.GetDirectoryName(My.Settings("MapPath").ToString)
-        OpenFileDialog1.Filter = "Bitmap picture|*.bmp"
+        OpenFileDialog1.Filter = "DDS picture|*.dds"
         If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
             filename = OpenFileDialog1.FileName
             My.Settings("MapPath") = filename
         Else
             Exit Sub
         End If
+        mapdds = DevIL.DevIL.LoadBitmap(filename)
         zoomLvl = 50
+        PictureBox1.Image = mapdds
         Me.PictureBox1.SizeMode = PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.Load(filename)
         Me.PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         Me.panel1.AutoScrollPosition = New Point(0, 0)
         clsWaypoint.mapSize = Me.PictureBox1.Image.Size

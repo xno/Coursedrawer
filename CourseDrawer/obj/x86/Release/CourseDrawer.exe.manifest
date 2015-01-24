@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CourseDrawer.exe" size="326568">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CourseDrawer.exe" size="327080">
       <assemblyIdentity name="CourseDrawer" version="4.0.6.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>inZx0RL/dOZ4XPKRXBCz8LFa9ob+u59GXf7xac0f0sU=</dsig:DigestValue>
+        <dsig:DigestValue>FBzVP4g3iWHv02jBhiPTIP+qnNet0YQ+IoHTCvuqObg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -66,13 +66,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="CourseDrawer.exe.config" size="2307">
+  <file name="CourseDrawer.exe.config" size="2351">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>RogmyGLoVr5zjfmQwUjJ3wri8FLkF3nz5GjQ1BmIH3k=</dsig:DigestValue>
+      <dsig:DigestValue>Wm8FGChPn0Q+WhorADR4S9fY0On7n9d+twwzihQYi7E=</dsig:DigestValue>
     </hash>
   </file>
   <file name="lib\DevIL.dll" size="876032">
@@ -82,15 +82,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>sWpPRzY+BtnYBNuTbUmR+gTXgC2tC8l+5BEZSuEQl5c=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="lib\DevIL.NET2.dll" size="37888">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>TY0RjGNtI8M4rEtVz7pMSnUELJd7YLCz/5AYTL6tz4w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="lib\ILU.dll" size="77824">
