@@ -43,3 +43,4 @@ C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Release\Cour
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.vbproj.GenerateResource.Cache
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.exe.manifest
 C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\obj\x86\Release\CourseDrawer.application
+C:\Users\Alfredo\Documents\GitHub\Coursedrawer\CourseDrawer\bin\Release\lib\DevIL.NET2.dll
