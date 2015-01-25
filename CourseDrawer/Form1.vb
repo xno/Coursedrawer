@@ -27,8 +27,8 @@
         Else
             Exit Sub
         End If
-        mapdds = DevIL.DevIL.LoadBitmapAndScale(filename, 1024, 1024, DevIL.DevILScaleFilter.NEAREST, DevIL.DevILScaleKind.WIDTH_AND_HEIGHT = 4)
-        zoomLvl = 100
+        mapdds = DevIL.DevIL.LoadBitmap(filename)
+        zoomLvl = 50
         PictureBox1.Image = mapdds
         Me.PictureBox1.SizeMode = PictureBoxSizeMode.AutoSize
         Me.PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
