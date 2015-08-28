@@ -113,7 +113,8 @@
         ElseIf butSelect.Checked = True Then
             clsCourses.getInstance.selectWP(origPoint)
         End If
-        Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
+        'Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
+        Me.redrawForm()
     End Sub
 
     Private Sub PictureBox1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseDown
@@ -270,7 +271,8 @@
             hide = True
         End If
         If clsCourses.getInstance.ItemHide(e.Index, hide) = False Then e.NewValue = e.CurrentValue
-        Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
+        'Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
+        Me.redrawForm()
     End Sub
 
     Private Sub PictureBox1_MouseEnter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox1.MouseEnter
@@ -397,17 +399,17 @@
 
     Private Sub butDeleteNode_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butDeleteNode.Click
         clsCourses.getInstance.deleteSelectedWP()
-        Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
+        Me.redrawForm()
     End Sub
 
     Private Sub butInsertNode_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butInsertNode.Click
         clsCourses.getInstance.insertBeforeWP()
-        Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
+        Me.redrawForm()
     End Sub
 
     Private Sub butAppendNode_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butAppendNode.Click
         clsCourses.getInstance.appendWP()
-        Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
+        Me.redrawForm()
     End Sub
 
     Private Sub butSelectAll_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butSelectAll.Click
@@ -513,7 +515,7 @@
     Private Sub butDelCourse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butDelCourse.Click
         clsCourses.getInstance.deleteSelectedCrs()
         Me.fillCourseList()
-        Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
+        Me.redrawForm()
     End Sub
 
     Private Sub butCalcAngleSel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butCalcAngleSel.Click
@@ -528,22 +530,23 @@
 
     Private Sub sButFillNodes_ButtonClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sButFillNodes.ButtonClick
         clsCourses.getInstance.fillBeforeSelected(10)
-        Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
+        Me.redrawForm()
     End Sub
 
     Private Sub Distance5ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Distance5ToolStripMenuItem.Click
         clsCourses.getInstance.fillBeforeSelected(5)
-        Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
+        Me.redrawForm()
     End Sub
 
     Private Sub Distance10ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Distance10ToolStripMenuItem.Click
         clsCourses.getInstance.fillBeforeSelected(10)
-        Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
+        Me.redrawForm()
     End Sub
 
     Private Sub Distance20ToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Distance20ToolStripMenuItem.Click
         clsCourses.getInstance.fillBeforeSelected(20)
-        Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
+        Me.redrawForm()
+
     End Sub
 
     Private Sub ToolStripTextBox1_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripTextBox1.Leave
@@ -577,7 +580,7 @@
         If Me.doListChange = True Then
             If Me.CheckedListBox1.SelectedItems.Count > 0 Then
                 clsCourses.getInstance.selectWP(Me.CheckedListBox1.SelectedIndex + 1)
-                Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
+                Me.redrawForm()
             End If
         End If
         Me.doListChange = False
@@ -609,5 +612,9 @@
 
     Private Sub butZoom_Click(sender As Object, e As EventArgs) Handles butZoom.Click
 
+    End Sub
+
+    Private Sub redrawForm()
+        Me.PictureBox1.Invalidate(New Drawing.Rectangle(-Me.panel1.AutoScrollPosition.X, -Me.panel1.AutoScrollPosition.Y, Me.panel1.Width, Me.panel1.Height))
     End Sub
 End Class
