@@ -3,12 +3,12 @@
 ''' </summary>
 ''' <remarks>Singleton class for wrapping courses</remarks>
 Public Class clsCourses
-    Private _courses As List(Of clsCourse)
+    Private _coursesList As List(Of clsCourse)
     Private _selectedWP As clsWaypoint
     Private _seledtedCrs As Integer
     Public ReadOnly Property Count As Integer
         Get
-            Return _courses.Count
+            Return _coursesList.Count
         End Get
     End Property
     Private Shared _instance As clsCourses
@@ -17,7 +17,7 @@ Public Class clsCourses
     ''' </summary>
     ''' <remarks></remarks>
     Private Sub New()
-        _courses = New List(Of clsCourse)
+        _coursesList = New List(Of clsCourse)
         AddHandler clsWaypoint.SelectionChanged, AddressOf Me.selectedChangeHandler
     End Sub
     ''' <summary>
@@ -41,7 +41,7 @@ Public Class clsCourses
     Public ReadOnly Property CourseList As Dictionary(Of String, Boolean)
         Get
             Dim dir As New Dictionary(Of String, Boolean)
-            For Each crs As clsCourse In _courses
+            For Each crs As clsCourse In _coursesList
                 dir.Add(crs.id.ToString & " : " & crs.Name, Not crs.Hidden)
             Next
             Return dir
@@ -55,8 +55,8 @@ Public Class clsCourses
     ''' <returns></returns>
     ''' <remarks></remarks>
     Public Function ItemHide(ByVal id As Integer, ByVal hide As Boolean) As Boolean
-        If id < 0 Or id >= _courses.Count Then Return False
-        _courses(id).Hidden = hide
+        If id < 0 Or id >= _coursesList.Count Then Return False
+        _coursesList(id).Hidden = hide
         Return True
     End Function
     ''' <summary>
@@ -83,7 +83,7 @@ Public Class clsCourses
                 Case Xml.XmlNodeType.Element
                     If xmlNodeReader.LocalName = "course" Then
                         course = New clsCourse
-                        _courses.Add(course)
+                        _coursesList.Add(course)
                         While xmlNodeReader.MoveToNextAttribute
                             Select Case xmlNodeReader.LocalName
                                 Case "name"
@@ -158,7 +158,7 @@ Public Class clsCourses
                     End If
             End Select
         Loop
-        _courses.Sort(AddressOf SortCourses)
+        _coursesList.Sort(AddressOf SortCourses)
         Me.RecalcCoursesID()
 
 
@@ -172,7 +172,7 @@ Public Class clsCourses
     ''' <remarks></remarks>
     Public Sub draw(ByRef graphics As Graphics, ByVal zoomLvl As Integer)
         Dim course As clsCourse
-        For Each course In _courses
+        For Each course In _coursesList
             If course.Hidden = False Then
                 course.draw(graphics, zoomLvl)
             End If
@@ -186,11 +186,11 @@ Public Class clsCourses
     Public Sub selectWP(ByVal point As PointF)
         Dim selected As Boolean
         Me._seledtedCrs = -1
-        For Each crs As clsCourse In _courses
+        For Each crs As clsCourse In _coursesList
             If crs.Hidden = False Then
                 selected = crs.selectWP(point)
                 If selected = True Then
-                    Me._seledtedCrs = _courses.IndexOf(crs)
+                    Me._seledtedCrs = _coursesList.IndexOf(crs)
                     Exit For
                 End If
             End If
@@ -202,9 +202,9 @@ Public Class clsCourses
     ''' <param name="id"></param>
     ''' <remarks></remarks>
     Public Sub selectWP(ByVal id As Integer)
-        If id > 0 And id <= _courses.Count Then
-            _courses(id - 1).selectWP(1)
-            Me._seledtedCrs = _courses.IndexOf(_courses(id - 1))
+        If id > 0 And id <= _coursesList.Count Then
+            _coursesList(id - 1).selectWP(1)
+            Me._seledtedCrs = _coursesList.IndexOf(_coursesList(id - 1))
         End If
     End Sub
     ''' <summary>
@@ -231,7 +231,7 @@ Public Class clsCourses
     ''' <remarks></remarks>
     Public Sub deleteSelectedWP()
         If Me._seledtedCrs >= 0 Then
-            Me._courses(Me._seledtedCrs).deleteSelectedWP()
+            Me._coursesList(Me._seledtedCrs).deleteSelectedWP()
         End If
     End Sub
     ''' <summary>
@@ -240,7 +240,7 @@ Public Class clsCourses
     ''' <remarks></remarks>
     Public Sub deleteSelectedCrs()
         If Me._seledtedCrs >= 0 Then
-            _courses.RemoveAt(_seledtedCrs)
+            _coursesList.RemoveAt(_seledtedCrs)
             Me.RecalcCoursesID()
             clsWaypoint.forceUnselect()
             clsCourse.forceUnselect()
@@ -254,9 +254,9 @@ Public Class clsCourses
     Public Sub moveCourseUp(ByVal id As Integer)
         If id > 1 Then
             Dim selCrs As clsCourse
-            selCrs = _courses(id - 1)
-            _courses.Remove(selCrs)
-            _courses.Insert(id - 2, selCrs)
+            selCrs = _coursesList(id - 1)
+            _coursesList.Remove(selCrs)
+            _coursesList.Insert(id - 2, selCrs)
             Me.RecalcCoursesID()
         End If
     End Sub
@@ -266,11 +266,11 @@ Public Class clsCourses
     ''' <param name="id"></param>
     ''' <remarks></remarks>
     Public Sub moveCourseDown(ByVal id As Integer)
-        If id < _courses.Count Then
+        If id < _coursesList.Count Then
             Dim selCrs As clsCourse
-            selCrs = _courses(id - 1)
-            _courses.Remove(selCrs)
-            _courses.Insert(id, selCrs)
+            selCrs = _coursesList(id - 1)
+            _coursesList.Remove(selCrs)
+            _coursesList.Insert(id, selCrs)
             Me.RecalcCoursesID()
         End If
     End Sub
@@ -280,8 +280,8 @@ Public Class clsCourses
     ''' <remarks></remarks>
     Private Sub RecalcCoursesID()
         'Commented to avoid courses Id recalculation
-        'For idx = 1 To _courses.Count
-        '    _courses(idx - 1).id = idx
+        'For idx = 1 To _coursesList.Count
+        '    _coursesList(idx - 1).id = idx
         'Next
     End Sub
     ''' <summary>
@@ -290,7 +290,7 @@ Public Class clsCourses
     ''' <remarks></remarks>
     Public Sub insertBeforeWP()
         If Me._seledtedCrs >= 0 Then
-            Me._courses(Me._seledtedCrs).insertBeforeWP()
+            Me._coursesList(Me._seledtedCrs).insertBeforeWP()
         End If
     End Sub
     ''' <summary>
@@ -299,7 +299,7 @@ Public Class clsCourses
     ''' <remarks></remarks>
     Public Sub appendWP()
         If Me._seledtedCrs >= 0 Then
-            Me._courses(Me._seledtedCrs).appendWP()
+            Me._coursesList(Me._seledtedCrs).appendWP()
         End If
     End Sub
     ''' <summary>
@@ -320,7 +320,7 @@ Public Class clsCourses
         Dim courses As XElement
 
         courses = New XElement("courses")
-        For Each crs In _courses
+        For Each crs In _coursesList
             courses.Add(crs.getXML)
         Next
         root.Add(courses)
@@ -336,11 +336,11 @@ Public Class clsCourses
     Public Sub addCourse(ByVal point As PointF)
         'Attention, new course ID must be lastcourse+1 instead count + 1
         Dim lastcourse As Integer
-        If _courses.Count = 0 Then lastcourse = 0 Else lastcourse = _courses(_courses.Count - 1).id
+        If _coursesList.Count = 0 Then lastcourse = 0 Else lastcourse = _coursesList(_coursesList.Count - 1).id
         Dim crs As New clsCourse("course " & lastcourse + 1, lastcourse + 1)
         crs.initWPforNewCourse(point)
-        _courses.Add(crs)
-        Me._seledtedCrs = _courses.Count - 1
+        _coursesList.Add(crs)
+        Me._seledtedCrs = _coursesList.Count - 1
     End Sub
 
     ''' <summary>
@@ -350,7 +350,7 @@ Public Class clsCourses
     ''' <remarks></remarks>
     Public Function calculateAngleSelWP() As Double
         If Me._seledtedCrs < 0 Then Return 0
-        Return _courses(_seledtedCrs).calculateAngleSelWP
+        Return _coursesList(_seledtedCrs).calculateAngleSelWP
     End Function
     ''' <summary>
     ''' Calculate angles(directions) for all waypoints in selected course
@@ -358,7 +358,7 @@ Public Class clsCourses
     ''' <remarks></remarks>
     Public Sub calculateAngleAllWP()
         If Me._seledtedCrs < 0 Then Exit Sub
-        _courses(_seledtedCrs).calculateAngleAllWP()
+        _coursesList(_seledtedCrs).calculateAngleAllWP()
     End Sub
     ''' <summary>
     ''' Fill waypoints between selected and previous WP in course
@@ -367,6 +367,6 @@ Public Class clsCourses
     ''' <remarks></remarks>
     Public Sub fillBeforeSelected(ByVal range As Integer)
         If Me._seledtedCrs < 0 Then Exit Sub
-        _courses(_seledtedCrs).fillBeforeSelected(range)
+        _coursesList(_seledtedCrs).fillBeforeSelected(range)
     End Sub
 End Class
