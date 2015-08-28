@@ -474,9 +474,9 @@
             TBCrs_Name.Enabled = True
             TBCrs_ID.Text = crs.id.ToString
             TBCrs_Name.Text = crs.Name
-            If CheckedListBox1.Items.Count >= crs.id Then
-                If CheckedListBox1.SelectedIndex <> crs.id - 1 Then
-                    CheckedListBox1.SelectedIndex = crs.id - 1
+            If CheckedListBox1.Items.Count >= crs.ListId Then
+                If CheckedListBox1.SelectedIndex <> crs.ListId Then
+                    CheckedListBox1.SelectedIndex = crs.ListId
                 End If
             End If
             ComboBox1.SelectedIndex = crs.parent

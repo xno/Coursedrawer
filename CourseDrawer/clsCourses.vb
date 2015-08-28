@@ -207,6 +207,19 @@ Public Class clsCourses
             Me._seledtedCrs = _coursesList.IndexOf(_coursesList(id - 1))
         End If
     End Sub
+
+    Public ReadOnly Property listSelectedId(id As Integer) As Integer
+        Get
+            Return _coursesList.IndexOf(_coursesList(id - 1))
+        End Get
+    End Property
+    Public ReadOnly Property listSelectedId(crs As clsCourse) As Integer
+        Get
+            Return _coursesList.IndexOf(crs)
+        End Get
+    End Property
+
+
     ''' <summary>
     ''' Sort courses by ID
     ''' </summary>

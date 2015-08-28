@@ -7,6 +7,7 @@
     Private Shared _isAnySelected As Boolean
     Private _waypoints As List(Of clsWaypoint)
     Private _selectedWP As Integer
+    Private _checkboxLisId As Integer
     Public Property Name As String
     Public Property id As Integer
     Public Property parent As Integer
@@ -18,6 +19,17 @@
     End Property
     Public Property isSelected As Boolean
     Public Property Hidden As Boolean
+
+
+    ''' <summary>
+    ''' Get Id of this course in checkboxlisted
+    ''' </summary>
+    ''' <returns></returns>
+    Public ReadOnly Property ListId As Integer
+        Get
+            Return _checkboxLisId
+        End Get
+    End Property
 
 
     ''' <summary>
@@ -186,12 +198,23 @@
         End If
         If id > 0 And id <= _waypoints.Count Then
             _waypoints(id - 1).forceSelect()
+            recoverCheckedListboxId()
+
             If Me._isSelected = False Then
                 RaiseEvent SelectionChanged(Me)
             End If
         End If
         Return True
     End Function
+
+    ''' <summary>
+    ''' Set ListId 
+    ''' Check for this course the ID on list in clsCourses
+    ''' </summary>
+    Private Sub recoverCheckedListboxId()
+        _checkboxLisId = clsCourses.getInstance.listSelectedId(Me)
+    End Sub
+
     ''' <summary>
     ''' Set selected waypoint if selection changed
     ''' </summary>
